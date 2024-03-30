@@ -9,21 +9,27 @@
     position: relative;
     top: 0;
     left: 0;
+    width: 100%;
+    height: auto;
+    
+    max-width: 100%;
   }
 
 .image {
     position: relative;
     top: 0;
     left: 0;
+    width: 100%;
+    height: auto;
+    
     max-width: 100%;
-    max-height: 100%;
 }
 
 .image_rem {
     position: absolute;
     top: 10px;
     left: 20px;
-    max-width: 100%;
+    max-width: auto;
     max-height: 100%;
 }
 
@@ -31,7 +37,7 @@
 .navbar{
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     font-size: 1.2rem;
     position: absolute;
@@ -61,28 +67,27 @@
     height: 100%;
 }   
 
-
 .fa-gem{
     margin-right: 0.5rem;
 }
 
 .navbar__menu{
+    flex-basis: auto;
     display: flex;
     align-items: right;
     list-style: none;
     text-align: center;
     float: right;
-    margin-left: auto;
-    margin-right: 0;
+    margin-left: -70;
+    margin-right: -70;
 }
 
 .navbar__item{
     height: 80px;
     display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 0;
-    width: 350px;
+    align-items: right;
+    margin-left: -70;
+    margin-right: -70;
 }
 
 .navbar__links{
@@ -233,4 +238,49 @@
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+
+
+
+.search-from , .search-to, .date-from, .date-to{
+    --padding: 14px;
+
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+    transition: box-shadow 0.25;
+    box-shadow: 0 0 2px #000;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+
+}
+
+
+.search-fr, .search-t, .date-fr, .date-t{
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: 5px;
+    background: transparent;
+    width: 300px;
+}
+
+.search-input::placeholder,
+.search-icon{
+    color: rgba(0, 0, 0, 0.5)
+}
+
+
+.box{
+    height: 150px;
+    width: 700px;
+    align-content: center;
+    margin-left: 100px;;
 }

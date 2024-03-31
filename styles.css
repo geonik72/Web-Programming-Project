@@ -7,11 +7,13 @@
 
 .upper-page {
     position: relative;
-    top: 0;
-    left: 0;
+    display: flex;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: auto;
     max-width: 100%;
+
   }
 
 .image {
@@ -20,7 +22,6 @@
     left: 0;
     width: 100%;
     height: auto;
-    
     max-width: 100%;
 }
 
@@ -30,35 +31,18 @@
     left: 20px;
     max-width: auto;
     max-height: 100%;
+    z-index: 999;
 }
 
 
 .navbar{
-    height: 80px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     font-size: 1.2rem;
-    position: absolute;
-    top: 0;
-    z-index: 999;
-    margin-left: 480px;
+    position: relative;
 }
 
-.navbar__container{
-    display: flex;
-    justify-content: space-between;
-    height: 60px;
-    z-index: 1;
-    width: 0%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 50px;
-}
 
 #navbar__logo{
     background-size: 100%;
-    display: flex;
     align-items: center;
     cursor: pointer;
     padding: 0 1rem;
@@ -67,27 +51,39 @@
     height: 100%;
 }   
 
+.navbar__container{
+    border-left:  solid;
+    order: 2;
+    height: 120px;
+    z-index: 1;
+    width: 1000px;
+    background: #000;
+    
+}
+
 .fa-gem{
     margin-right: 0.5rem;
 }
 
 .navbar__menu{
-    flex-basis: auto;
+    padding-top: 20px;
     display: flex;
-    align-items: right;
-    list-style: none;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    flex-basis: auto;
     text-align: center;
-    float: right;
-    margin-left: -70;
-    margin-right: -70;
 }
 
 .navbar__item{
-    height: 80px;
-    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: red;
+    height: 80;
+    width: 25%;
     align-items: right;
-    margin-left: -70;
-    margin-right: -70;
+
+    border: 10px solid white;
 }
 
 .navbar__links{
@@ -108,7 +104,7 @@
     justify-content: center;
     align-items: center;
     padding: 0 3rem;
-    width: 100%;
+    width: 25%;
     height: 80px;
     margin-left: auto;
     margin-right: 0;
@@ -146,7 +142,7 @@
 }
 
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 600px){
     .navbar__container{
         display: flex;
         justify-content: space-between;
@@ -247,8 +243,6 @@
     --padding: 14px;
 
     width: 300px;
-    display: flex;
-    align-items: center;
     padding: var(--padding);
     border-radius: 28px;
     background: #f6f6f6;

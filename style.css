@@ -13,13 +13,13 @@
     width: 100%;
     height: 100%;
     max-width: 100%;
-    background-image: linear-gradient(to bottom, rgb(59, 81, 182, 0.9), rgba(100, 201, 248, 0.2));
+    background-image: linear-gradient(to bottom, rgb(59, 82, 182), rgb(100, 201, 248));
 }
 
 
 .navbar{
-    background: rgb(59, 82, 182);
-    height: 80px;
+    background-image: linear-gradient(to bottom, rgb(59, 82, 182), rgb(100, 201, 248));
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -244,7 +244,7 @@ h1{
 .lower-page {
     display: grid;
     align-items: center; 
-    grid-template-columns: 1.5fr 3fr 3fr;
+    grid-template-columns: 1.5fr 5fr 3fr;
     column-gap: 5px;
    }
    
@@ -252,13 +252,13 @@ h1{
     margin-left: 50px;
     font-family: 'Arial';
     font-size: 1.75vw;
-    height: 50%;
+    height: 40%;
 }
 
 .chris-text{
     margin-left: 50px;
     font-size: 1.75vw;
-    height: 50%;
+    height: 40%;
 }
 
 .map {

@@ -11,3 +11,10 @@ UPDATES:
 
 
 ΝΑ ΦΤΙΑΞΟΥΜΕ CONTACT US PAGE ΜΕ ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ 
+
+- HOME PAGE: ΕΚΑΝΑ ΚΑΠΟΙΕΣ ΔΙΟΡΘΩΣΕΙΣ, ΜΟΝΟ ΘΕΜΑ ΤΟ SLIDE ΜΕ ΤΑ TOP DESTINATIONS ΔΕΝ ΚΑΝΕΙ ADJUST STO WINDOW
+
+- PROFILE PAGE: PROVLHMA ME ADJUST KAI EDW
+
+
+!TO PROVLHMA ME TO NAVBAR KAI TO DROPMENU PARAMENEI!

@@ -18,25 +18,50 @@
         <div class="search-box">
             <h1 id="title">Book your next adventure now!</h1>
             <form>
+                <div class="choices">
+                    <label for="one-way">
+                        <input type="radio" id="one-way" name="trip-choice" value="one way">
+                        One&nbsp;Way
+                    </label>
+                    <label for="round-trip">
+                        <input type="radio" id="round-trip" name="trip-choice" value="round trip">
+                        Round&nbsp;Trip
+                    </label>
+                </div>
+
                 <div class="input-fields">
+
+                    
                     <div class="inputs" id="placefrom">
-                        <i class="fa-solid fa-plane-departure"></i>
+                        <!-- <i class="fa-solid fa-plane-departure"></i> -->
                         <input type="text" placeholder="From">
                     </div>
 
                     <div class="inputs" id="placeto">
-                        <i class="fa-solid fa-plane-arrival"></i>
+                        <!-- <i class="fa-solid fa-plane-arrival"></i> -->
                         <input type="text" placeholder="To">
                     </div>
-                    <br>
+                    <br><br>
                     <div class="inputs-date" id="datefrom">
-                        <i class="fa-solid fa-calendar-days"></i>
+                        <!-- <i class="fa-solid fa-calendar-days"></i> -->
                         <input type="date" placeholder="From">
                     </div>
 
                     <div class="inputs-date" id="dateto">
-                        <i class="fa-solid fa-calendar-days"></i>
+                        <!-- <i class="fa-solid fa-calendar-days"></i> -->
                         <input type="date" placeholder="To">
+                    </div>
+
+
+                    <div class="amount">
+                        <label for="cars">Amount of Passengers:</label>
+                        <select name="passengers" id="passengers">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    <br><br>
                     </div>
 
                     <div class="search-btn">
@@ -45,28 +70,31 @@
                 </div>
             </form>
         </div>
-    </div>    
+      
 
 
 
-    <!--
+    
 
 
-
-    <div class="down-page">
+    
+    
         <div class="dest-home">
-            <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Trending Destinations:</span>
+            <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Trending&nbsp;Destinations:</span>
         </div> 
     
         <div class="slideshow-container">
 
-             Full-width images with number and caption text 
+            <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 5</div>
                 <a href="/" id="ath">
                     <img src="/images/athens.jpg"
                     width="1000px"
-                    height="400px">
+                    height="400px"
+                    position= "relative"
+                    text-align= "center"
+                    max-width= "100%">
                     <div class="text">ATHENS</div>
                 </a>
             </div>
@@ -76,7 +104,10 @@
                 <a href="/" id="porto">
                     <img src="/images/porto.jpg" 
                     width="1000px"
-                    height="400px">
+                    height="400px"
+                    position= "relative"
+                    text-align= "center"
+                    >
                     <div class="text">PORTO</div>
                 </a>
             </div>
@@ -86,7 +117,10 @@
                 <a href="/" id="madrid">
                     <img src="/images/madrid.jpg" 
                     width="1000px"
-                    height="400px">
+                    height="400px"
+                    position= "relative"
+                    text-align= "center"
+                    max-width= "100%">
                     <div class="text">MADRID</div>
                 </a>
             </div>
@@ -96,7 +130,10 @@
                 <a href="/" id="newyork">
                     <img src="/images/new york.jpg" 
                     width="1000px"
-                    height="400px">
+                    height="400px"
+                    position= "relative"
+                    text-align= "center"
+                    >
                     <div class="text">NEW YORK</div>
                 </a>
             </div>
@@ -106,18 +143,21 @@
                 <a href="/" id="copen">
                     <img src="/images/copenhgane.jpg" 
                     width="1000px"
-                    height="400px">
+                    height="400px"
+                    position= "relative"
+                    text-align= "center"
+                    >
                     <div class="text">COPENHAGEN</div>
                 </a>
             </div>
 
-             Next and previous buttons 
+            <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br>
 
-         The dots/circles 
+        <!-- The dots/circles -->
         <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
@@ -125,11 +165,13 @@
             <span class="dot" onclick="currentSlide(4)"></span>
             <span class="dot" onclick="currentSlide(5)"></span>
         </div>
-    </div>  -->
+    
+    </div>  
 
-
+    <script src="slides.js"></script>  
     <script src="appl.js"></script>
     <script src="includeHTML.js"></script>  
+    
     
 </body>
 </html>

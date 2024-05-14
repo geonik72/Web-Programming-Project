@@ -8,8 +8,8 @@
 
 .page{
     width: 100%;
-    height: 100vh;
-    background-image: url(/images/SkyHop\ \(2\).png);
+    height: 100hv;
+    background-image: linear-gradient(to bottom, rgb(0, 5, 27), rgb(9, 63, 88));
     background-position: center;
     background-size: cover;
     position: relative;
@@ -23,13 +23,14 @@
     height: auto;
     
     max-width: 100%;
+    
 }
 .search-box{
     width:90%;
     max-width: 1000px;
-    max-height: 600px;
+    max-height: 800px;
    
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -41,42 +42,45 @@
     outline:rgba(190, 240, 240, 0.733);
     border-width: thick;
     border-style: solid;
-
+    margin-top: 180px;
 }
 
 .inputs{
     background: #eaeaea;
-    margin: 15px 0;
+    
     border-radius: 10px;
     display: flex;
     align-items: center;
     max-height: 65px;
     transition: max-height 0.5s;
     overflow: hidden;
-    max-width: 300px;
-
+    width: 49%;
+    max-width: 100%;
+    display: inline-block;
     
     
 }
 
 .inputs-date{
     background: #eaeaea;
-    margin: 15px 0;
+    
     border-radius: 10px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    max-height: 55px;
+    max-height: 65px;
     transition: max-height 0.5s;
     overflow: hidden;
-    max-width: 300px;
-   
+    width: 49%;
+    display: inline-block;
+    max-width: 100%;
     
 }   
 
 .input-fields i{
     margin-left: 10px;
     color: #999;
-    
+    display: inline-block;
 }
 
 input{
@@ -99,6 +103,7 @@ input{
     max-width: 300px;
     color:#333333;
     font-size: 20px;
+
 }
 
 .search-box h1{
@@ -112,5 +117,150 @@ input{
 }
 
 
+.choices {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 6px;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.choices label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.choices input[type="radio"] {
+    margin-right: 5px; /* Adjust as needed */
+}
+
+.amount{
+    margin-bottom: 20px;
+    font-size: 17px;
+    margin-top: 25px;
+}
 
 
+
+
+
+.image_ath{
+    width:1250px;
+    height: 450px;
+    position: relative;
+    left: 15%;  
+    margin-top: 300px;
+}
+
+.dest-home{
+    font-size: 40px;
+    
+    
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-top: -200px;
+    margin-bottom: 150px;
+    color:#0f015e;
+    position: relative;
+    text-align: center;
+    margin-left: 0.2vw;
+}
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin-top: -150px;
+  left: 22%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-weight: bold;
+  font-size: 35px;
+  padding: 8px 42px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: right;
+  font-family: 'Times New Roman', Times, serif;
+  outline: #000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 1.2s ease;
+  margin-top: 5px;
+  margin-bottom: 100px;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

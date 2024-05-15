@@ -18,3 +18,12 @@ UPDATES:
 
 
 !TO PROVLHMA ME TO NAVBAR KAI TO DROPMENU PARAMENEI!
+
+
+Η ΒΑΣΗ ΠΡΕΠΕΙ ΝΑ ΠΕΡΙΕΧΕI:
+
+1. ΑΕΡΟΔΡΟΜΙΑ / ΠΟΛΕΙΣ
+2. ΠΤΗΣΕΙΣ (ΚΑΙ ΤΙΣ ΛΕΠΤΟΜΕΡΕΙΕΣ ΤΟΥΣ)
+3. ΤΑ 5 ΤΟΠ DESTINATIONS
+4. ΟΤΑΝ ΓΙΝΕΤΑΙ Η ΚΡΑΤΗΣΗ ΝΑ ΑΠΟΘΗΚΕΥΟΝΤΑΙ ΤΑ ΣΤΟΙΧΕΙΑ, ΚΑΙ Η ΚΡΑΤΗΣΗ, ΚΑΙ ΤΟ ΕΙΣΙΤΗΡΙΟ
+5. ΤΑ ΣΤΟΙΧΕΙΑ ΤΟΥ ΧΡΗΣΤΗ ΠΟΥ ΚΑΝΕΙ SING UP (AUTHENTICATION/ AUTHORIZATION)

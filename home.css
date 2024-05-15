@@ -145,15 +145,6 @@ input{
 
 
 
-
-.image_ath{
-    width:1250px;
-    height: 450px;
-    position: relative;
-    left: 15%;  
-    margin-top: 300px;
-}
-
 .dest-home{
     font-size: 40px;
     
@@ -172,7 +163,7 @@ input{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 100%;
+  max-width: 1000px;
   position: relative;
   margin-top: -150px;
   left: 22%;
@@ -181,7 +172,7 @@ input{
 /* Hide the images by default */
 .mySlides {
   display: none;
-  position: relative;
+ 
 }
 
 /* Next & previous buttons */

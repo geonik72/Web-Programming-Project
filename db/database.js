@@ -1,17 +1,21 @@
 const Database = require('better-sqlite3');
-const db = new Database('flightDB.db', { verbose: console.log });
+const db = new Database('db/SkyHop.db', { verbose: console.log });
 
 // Initialize tables if they don't exist
 db.exec(`
     CREATE TABLE IF NOT EXISTS flights (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        flightNumber TEXT,
-        departure TEXT,
-        destination TEXT,
-        departureTime TEXT,
-        arrivalTime TEXT,
-        price REAL
-    );
+        "id"	INTEGER NOT NULL,
+	"origin_id"	INTEGER NOT NULL,
+	"destination_id"	INTEGER NOT NULL,
+	"departure time"	TEXT NOT NULL,
+	"arrival time"	NUMERIC NOT NULL,
+	"duration"	TEXT NOT NULL,
+	"price"	TEXT,
+	"date"	TEXT,
+	FOREIGN KEY("destination_id") REFERENCES "airports"("id"),
+	FOREIGN KEY("origin_id") REFERENCES "airports"("id"),
+	PRIMARY KEY("id")
+);
 
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,

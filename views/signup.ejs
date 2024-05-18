@@ -14,7 +14,7 @@
    <div class="container">
         <div class="form-box">  
             <h1 id="title">Sign Up</h1>
-            <form>
+            <form action="/signup" method="POST">
                 <div class="input-group">
                     <div class="input-field" id="nameField">
                         <i class="fa-solid fa-user"></i>
@@ -36,6 +36,11 @@
                     <button type="button" id="signupBtn">Sign Up</button>
                     <button type="button" id="signinBtn" class="disable">Login</button>
                 </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Submit
+                </button>
             </form>
         </div>
 

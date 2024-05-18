@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sky Hop</title>
-    <link rel ="stylesheet" href ="home.css" />
+    <link rel ="stylesheet" href ="../styles/home.css" />
     <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -17,42 +17,35 @@
        
         <div class="search-box">
             <h1 id="title">Book your next adventure now!</h1>
-            <form>
+            <form method="GET">
                 <div class="choices">
                     <label for="one-way">
-                        <input type="radio" id="one-way" name="trip-choice" value="one way">
+                        <input type="radio" id="one-way" name="trip-choice" value="one way" required>
                         One&nbsp;Way
                     </label>
                     <label for="round-trip">
-                        <input type="radio" id="round-trip" name="trip-choice" value="round trip">
+                        <input type="radio" id="round-trip" name="trip-choice" value="round trip" required>
                         Round&nbsp;Trip
                     </label>
                 </div>
-
+            
                 <div class="input-fields">
-
-                    
                     <div class="inputs" id="placefrom">
-                        <!-- <i class="fa-solid fa-plane-departure"></i> -->
-                        <input type="text" placeholder="From">
+                        <input type="text" name="from" placeholder="From" required>
                     </div>
-
+            
                     <div class="inputs" id="placeto">
-                        <!-- <i class="fa-solid fa-plane-arrival"></i> -->
-                        <input type="text" placeholder="To">
+                        <input type="text" name="to" placeholder="To" required>
                     </div>
                     <br><br>
                     <div class="inputs-date" id="datefrom">
-                        <!-- <i class="fa-solid fa-calendar-days"></i> -->
-                        <input type="date" placeholder="From">
+                        <input type="date" name="departure-date" placeholder="From" required>
                     </div>
-
+            
                     <div class="inputs-date" id="dateto">
-                        <!-- <i class="fa-solid fa-calendar-days"></i> -->
-                        <input type="date" placeholder="To">
+                        <input type="date" name="return-date" placeholder="To">
                     </div>
-
-
+            
                     <div class="amount">
                         <label for="cars">Amount of Passengers:</label>
                         <select name="passengers" id="passengers">
@@ -61,11 +54,11 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-                    <br><br>
+                        <br><br>
                     </div>
-
+            
                     <div class="search-btn">
-                        <a href="/" id="searchflights">Search for flights</a>
+                        <button type="submit" id="searchflights">Search for flights</button>
                     </div>
                 </div>
             </form>
@@ -168,9 +161,9 @@
     
     </div>  
 
-    <script src="slides.js"></script>  
-    <script src="appl.js"></script>
-    <script src="includeHTML.js"></script>  
+    <script src="../scripts/slides.js"></script>  
+    <script src="../scripts/appl.js"></script>
+    <script src="../scripts/includeHTML.js"></script>  
     
     
 </body>

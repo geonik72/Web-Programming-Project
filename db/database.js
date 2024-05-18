@@ -5,16 +5,24 @@ const db = new Database('db/SkyHop.db', { verbose: console.log });
 db.exec(`
     CREATE TABLE IF NOT EXISTS flights (
         "id"	INTEGER NOT NULL,
-	"origin_id"	INTEGER NOT NULL,
-	"destination_id"	INTEGER NOT NULL,
-	"departure time"	TEXT NOT NULL,
-	"arrival time"	NUMERIC NOT NULL,
-	"duration"	TEXT NOT NULL,
-	"price"	TEXT,
-	"date"	TEXT,
-	FOREIGN KEY("destination_id") REFERENCES "airports"("id"),
-	FOREIGN KEY("origin_id") REFERENCES "airports"("id"),
-	PRIMARY KEY("id")
+		"origin_id"	INTEGER NOT NULL,
+		"destination_id"	INTEGER NOT NULL,
+		"departure time"	TEXT NOT NULL,
+		"arrival time"	NUMERIC NOT NULL,
+		"duration"	TEXT NOT NULL,
+		"price"	TEXT,
+		"date"	TEXT,
+		FOREIGN KEY("destination_id") REFERENCES "airports"("id"),
+		FOREIGN KEY("origin_id") REFERENCES "airports"("id"),
+		PRIMARY KEY("id")
+);
+
+	CREATE TABLE IF NOT EXISTS airports (
+		"City"	TEXT NOT NULL,
+		"Code"	TEXT NOT NULL,
+		"Country"	TEXT NOT NULL,
+		"id"	INTEGER NOT NULL,
+		PRIMARY KEY("id")
 );
 
     CREATE TABLE IF NOT EXISTS users (

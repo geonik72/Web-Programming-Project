@@ -1,11 +1,3 @@
-//const menu = document.querySelector('#mobile-menu')
-//const menuLinks = document.querySelector('.navbar__menu')
-
-//menu.addEventListener('click', function() {
-    //menu.classList.toggle('is-active');
-   // menuLinks.classList.toggle('active');
-//});
-
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -35,3 +27,29 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+
+
+
+//script to disable/enable date-to input depending on the trip type
+document.addEventListener('DOMContentLoaded', function () {
+  
+  const oneWayRadio = document.getElementById('one-way');
+  const roundTripRadio = document.getElementById('round-trip');
+
+  const dateToInput = document.getElementById('dateto').querySelector('input');
+
+ 
+  function handleTripChoiceChange() {
+      if (oneWayRadio.checked) {
+          dateToInput.disabled = true;
+      } else if (roundTripRadio.checked) {
+          dateToInput.disabled = false;
+      }
+  }
+
+  oneWayRadio.addEventListener('change', handleTripChoiceChange);
+  roundTripRadio.addEventListener('change', handleTripChoiceChange);
+
+  handleTripChoiceChange();
+});

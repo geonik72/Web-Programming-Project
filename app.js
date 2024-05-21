@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const flightRoutes = require('./routes/flights');
 const userRoutes = require('./routes/users');
-const siteRoutes = require('./routes/site-routes'); // Corrected path
+const siteRoutes = require('./routes/site-routes');
 const path = require('path');
 
 const app = express();

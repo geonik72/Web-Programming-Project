@@ -14,20 +14,33 @@ router.get('/', (req, res) => {
     res.send(flights);
 });
 
+router.get('/search', (req, res) => {
+    const { from, to, 'departure-date': departureDate, 'return-date': returnDate, 'trip-choice': tripChoice } = req.query;
+    console.log(from, to, departureDate, returnDate, tripChoice);   
+    try {
+        const results = Flight.findByOriginAndDestination(from, to);
+        if (results.length === 0) {
+            return res.status(404).send({ error: 'No flights found' });
+        }
+        res.send(results);
+    } catch (error) {
+        console.error('Error searching for flights:', error);
+        res.status(500).send({ error: 'An error occurred while searching for flights' });
+    }
+});
+
+
 // Get a specific flight
 router.get('/:id', (req, res) => {
+    console.log('1234');
     const flight = Flight.findById(req.params.id);
     if (!flight) return res.status(404).send();
     res.send(flight);
 });
 
 // Get flights by origin and destination
-router.get('/search', (req, res) => {
-    const { origin_id, destination_id } = req.query;
-    const flights = Flight.findByOriginAndDestination(origin_id, destination_id);
-    if (!flights.length) return res.status(404).send();
-    res.send(flights);
-});
+
+
 
 // Update a flight
 router.patch('/:id', (req, res) => {

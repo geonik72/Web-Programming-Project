@@ -30,8 +30,8 @@
 
 .form-box h1{
     font-size: 30px;
-    margin-bottom: 60px;
-    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-top: -10px;
     color:#4f3bc2;
     position: relative;
     text-align: center;
@@ -101,6 +101,7 @@ form p a{
     outline: 0;
     cursor: pointer;
     transition: background 1s;
+    margin-top: 20px;
 
 }
 
@@ -119,6 +120,7 @@ form p a{
     text-align: center;
     text-decoration: none;
     justify-content: center; 
+    margin-top: 20px;
 }
 
 

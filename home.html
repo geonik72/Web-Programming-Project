@@ -18,7 +18,7 @@
         <div class="search-box">
             <h1 id="title">Book your next adventure now!</h1>
             <form>
-                <div class="choices">
+                <div class="choices" required>
                     <label for="one-way">
                         <input type="radio" id="one-way" name="trip-choice" value="one way">
                         One&nbsp;Way
@@ -34,17 +34,17 @@
                     
                     <div class="inputs" id="placefrom">
                         <!-- <i class="fa-solid fa-plane-departure"></i> -->
-                        <input type="text" placeholder="From">
+                        <input type="text" placeholder="From" required>
                     </div>
 
                     <div class="inputs" id="placeto">
                         <!-- <i class="fa-solid fa-plane-arrival"></i> -->
-                        <input type="text" placeholder="To">
+                        <input type="text" placeholder="To" required>
                     </div>
                     <br><br>
                     <div class="inputs-date" id="datefrom">
                         <!-- <i class="fa-solid fa-calendar-days"></i> -->
-                        <input type="date" id="date-from" placeholder="From">
+                        <input type="date" id="date-from" placeholder="From" required>
                     </div>
 
                     <div class="inputs-date" id="dateto">

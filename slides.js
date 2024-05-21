@@ -53,3 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   handleTripChoiceChange();
 });
+
+
+document.getElementById('date-from').addEventListener('change', function(){
+  var dateFrom = this.value;
+  document.getElementById('date-to').min = dateFrom;
+});

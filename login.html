@@ -13,14 +13,10 @@
     </nav>
    <div class="container">
         <div class="form-box">  
-            <h1 id="title">Sign Up</h1>
+            <h1 id="title">Login</h1>
             <form>
                 <div class="input-group">
-                    <div class="input-field" id="nameField">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" name="name" placeholder="Name">
-                    </div>
-
+                   
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
                         <input type="email" name="email" placeholder="Email">
@@ -33,14 +29,10 @@
                     <p>Forgot password? <a href="#">Click Here!</a></p>
                 </div>
                 <div class="btn-field">
-                    <button type="button" id="signupBtn" class="disable">Sign Up</button>
-                    <button type="button" id="signinBtn">Login</button>
+                    <a href="/signup.html" type="button" id="signupBtn" class="disable">Sign Up</a>
+                    <button  type="button" id="signinBtn">Login</button>
                 </div>
 
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">
-                    Submit
-                </button>
             </form>
         </div>
 
@@ -48,28 +40,7 @@
 
    </div> 
 
-<script>
-    let signupBtn = document.getElementById("signupBtn");
-    let signinBtn = document.getElementById("signinBtn");
-    let nameField = document.getElementById("nameField")
-    let title = document.getElementById("title")
 
-    signinBtn.onclick = function(){
-        nameField.style.maxHeight = "0";
-        title.innerHTML = "Login";
-        signupBtn.classList.add("disable");
-        signinBtn.classList.remove("disable");
-    }
-
-    signupBtn.onclick = function(){
-        nameField.style.maxHeight = "60px";
-        title.innerHTML = "Sign Up";
-        signinBtn.classList.add("disable");
-        signupBtn.classList.remove("disable");
-    }
-
-
-</script>
 <script src="includeHTML.js"></script>
 <script src="appl.js"></script>
 </body>

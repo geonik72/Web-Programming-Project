@@ -1,13 +1,34 @@
 UPDATES:
 
--ABOUT US PAGE: ΤΟ ADJUST ΔΕΝ ΔΟΥΛΕΥΕΙ ΚΑΛΑ. ΑΜΑ ΒΑΖΩ ΤΟ NAVBAR ΑΠΟ ΞΕΧΩΡΙΣΤΟ HTML, ΔΕΝ ΔΟΥΛΕΥΕΙ ΤΟ DROP DOWN MENU ΟΤΑΝ ΜΙΚΡΑΙΝΕΙ ΤΟ ΠΑΡΑΘΥΡΟ (ΟΤΑΝ ΔΗΛΑΔΗ ΕΧΩ 2 SCRIPTS). ΑΜΑ ΠΕΡΙΚΛΕΙΩ ΤΟΝ ΚΩΔΙΚΑ ΤΟΥ NAVBAR ΣΤΟ ΙΔΙΟ ΤΟ ΑΡΧΕΙΟ ΕΙΝΑΙ ΚΟΜΠΛΕ. ΔΕΝ ΞΕΡΩ ΓΙΑΤΙ. 
+- Fixed about us page adjustment
 
-- SIGNUP-LOGIN PAGE - WITHOUT AUTHENTICATION. ΤΟ ΜΠΟΞ ΚΑΙ ΤΟ ΦΟΡΜ ΕΙΝΑΙ ΚΟΜΠΛΕ ΚΑΙ ΚΑΝΟΥΝ ADJUST. ΙΔΙΟ ΠΡΟΒΛΗΜΑ ΜΕ DORP DOWN MENU. ΕΚΑΝΑ ΞΕΧΩΡΙΣΤΟ CSS ΓΙΑ ΝΑ ΜΗΝ ΓΙΝΕΙ ΧΑΜΟΣ.
-UPDATES:
+- booking form
 
-- ΕΦΤΙΑΞΑ ΝΕΟ CSS (=style.css)
-- ΝΕΟ JS (=appl.js)
-- ABOUT US PAGE
+- ΠΕΡΙΟΡΙΣΜΟΙ ΣΤΟ date-to
+
+- Ξεχωριστο Page gia login kai signup
+
+
+////
+
+TO-DO:
+
+- MY-TICKET PAGE ME QR CODE. 
+- MY BOOKED TRIPS. ISTORIKO KRATHSEWN KATHE XRHSTH
+- SELIDA GIA KATHE TOP DESTINATION
+
+- AUTHENTICATION / AUTHORIZATION
+
+- ADJUSTMENT TWN SLIDES STO HOME KAI STO TOP DESTS
+- BUTTON STO SEARCH RESUTLS (ANALOGA AN YPARXEI EPISTROFH H OXI)
+
+
+
+
+
+
+
+
 
 
 ΝΑ ΦΤΙΑΞΟΥΜΕ CONTACT US PAGE ΜΕ ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ 
@@ -22,8 +43,8 @@ UPDATES:
 
 Η ΒΑΣΗ ΠΡΕΠΕΙ ΝΑ ΠΕΡΙΕΧΕI:
 
-1. ΑΕΡΟΔΡΟΜΙΑ / ΠΟΛΕΙΣ
-2. ΠΤΗΣΕΙΣ (ΚΑΙ ΤΙΣ ΛΕΠΤΟΜΕΡΕΙΕΣ ΤΟΥΣ)
-3. ΤΑ 5 ΤΟΠ DESTINATIONS
+1. ΑΕΡΟΔΡΟΜΙΑ / ΠΟΛΕΙΣ     (DONE)
+2. ΠΤΗΣΕΙΣ (ΚΑΙ ΤΙΣ ΛΕΠΤΟΜΕΡΕΙΕΣ ΤΟΥΣ)      (DONE)
+3. ΤΑ 5 ΤΟΠ DESTINATIONS        (DONE)
 4. ΟΤΑΝ ΓΙΝΕΤΑΙ Η ΚΡΑΤΗΣΗ ΝΑ ΑΠΟΘΗΚΕΥΟΝΤΑΙ ΤΑ ΣΤΟΙΧΕΙΑ, ΚΑΙ Η ΚΡΑΤΗΣΗ, ΚΑΙ ΤΟ ΕΙΣΙΤΗΡΙΟ
 5. ΤΑ ΣΤΟΙΧΕΙΑ ΤΟΥ ΧΡΗΣΤΗ ΠΟΥ ΚΑΝΕΙ SING UP (AUTHENTICATION/ AUTHORIZATION)

@@ -6,6 +6,8 @@
     <title>Sky Hop</title>
     <link rel="stylesheet" href="../styles/home.css">
     <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
+    <script src="../scripts/datepicker.js" defer></script>
+    <script src="../scripts/formValidation.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -83,11 +85,11 @@
                
                     <br><br>
                     <div class="inputs-date" id="datefrom">
-                        <input type="date" name="departure-date" placeholder="From" required>
+                        <input type="date" name="departure-date" id="departure-date" placeholder="From" required>
                     </div>
             
                     <div class="inputs-date" id="dateto">
-                        <input type="date" name="return-date" placeholder="To">
+                        <input type="date" name="return-date" id="return-date" placeholder="To">
                     </div>
 
                     <br><br>
@@ -162,8 +164,8 @@
 
     <script src="../scripts/slides.js"></script>  
     <script src="../scripts/appl.js"></script>
-    <script src="../scripts/includeHTML.js"></script> 
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/includeHTML.js"></script>
     <script src="../scripts/button-visibility.js"></script>
-    <script src="../scripts/search.js"></script>
 </body>
 </html>

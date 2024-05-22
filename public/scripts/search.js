@@ -1,6 +1,4 @@
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
+document.addEventListener('DOMContentLoaded', function () {
     const cityMap = {
         "Athens, Greece": 1,
         "Porto, Portugal": 2,
@@ -24,19 +22,70 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
         "Thessaloniki, Greece": 20
     };
     
-    const fromCity = document.getElementById('from').value;
-    const toCity = document.getElementById('to').value;
+    const fromInput = document.getElementById('from');
+    const toInput = document.getElementById('to');
     
-    const fromCityId = cityMap[fromCity];
-    const toCityId = cityMap[toCity];
+    fromInput.addEventListener('input', function () {
+        updateToList();
+    });
     
-    if (!fromCityId || !toCityId) {
-        alert('Please select valid cities from the list.');
-        return;
+    toInput.addEventListener('input', function () {
+        updateFromList();
+    });
+    
+    function updateToList() {
+        const selectedFromCity = fromInput.value;
+        const toOptions = document.getElementById('destinations').options;
+        
+        for (let i = 0; i < toOptions.length; i++) {
+            const option = toOptions[i];
+            option.disabled = option.value === selectedFromCity;
+        }
     }
     
-    const form = document.getElementById('searchForm');
-    form.innerHTML += `<input type="hidden" name="from" value="${fromCityId}">`;
-    form.innerHTML += `<input type="hidden" name="to" value="${toCityId}">`;
-    form.submit();
+    function updateFromList() {
+        const selectedToCity = toInput.value;
+        const fromOptions = document.getElementById('cities').options;
+        
+        for (let i = 0; i < fromOptions.length; i++) {
+            const option = fromOptions[i];
+            option.disabled = option.value === selectedToCity;
+        }
+    }
+    
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const fromCity = fromInput.value;
+        const toCity = toInput.value;
+        
+        const fromCityId = cityMap[fromCity];
+        const toCityId = cityMap[toCity];
+        
+        if (!fromCityId || !toCityId) {
+            alert('Please select valid cities from the list.');
+            return;
+        }
+        
+        let fromHiddenInput = document.querySelector('input[name="from"]');
+        let toHiddenInput = document.querySelector('input[name="to"]');
+        
+        if (!fromHiddenInput) {
+            fromHiddenInput = document.createElement('input');
+            fromHiddenInput.type = 'hidden';
+            fromHiddenInput.name = 'from';
+            document.getElementById('searchForm').appendChild(fromHiddenInput);
+        }
+        fromHiddenInput.value = fromCityId;
+        
+        if (!toHiddenInput) {
+            toHiddenInput = document.createElement('input');
+            toHiddenInput.type = 'hidden';
+            toHiddenInput.name = 'to';
+            document.getElementById('searchForm').appendChild(toHiddenInput);
+        }
+        toHiddenInput.value = toCityId;
+        
+        document.getElementById('searchForm').submit();
+    });
 });

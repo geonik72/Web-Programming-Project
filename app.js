@@ -10,6 +10,12 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 
+
+
+app.use(express.urlencoded({ extended: false }));
+
+
+
 // Serve static files from the "public" directory
 app.use(express.static('public'));
 
@@ -19,6 +25,11 @@ app.use('/', siteRoutes);
 // Routes
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
+
+
+
+
+
 
 
 // Start the server

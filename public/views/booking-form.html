@@ -19,29 +19,29 @@
             <i class="fa-solid fa-id-card"></i>
             
             
-            <form class="booking-details">
-                <div class="book-dets" id="name">
-                    <input type="text" placeholder="Name" required>
+            <form class="booking-details" action="../views/aboutus.html" method="get">
+                <div class="book-dets" >
+                    <input type="text" id="book-name" placeholder="Name" required>
                 </div>
 
-                <div class="book-dets" id="surname">
-                    <input type="text" placeholder="Surname" required>
+                <div class="book-dets" >
+                    <input type="text"  id="book-surname" placeholder="Surname" required>
                 </div>
 
-                <div class="book-dets" id="email">
-                    <input type="email" placeholder="Email" required>
+                <div class="book-dets" >
+                    <input type="email" id="book-email" placeholder="Email" required>
                 </div>
 
-                <div class="book-dets" id="phone">
-                    <input type="number" placeholder="Phone number" required>
+                <div class="book-dets" >
+                    <input type="number" id="book-phone" placeholder="Phone number" required>
                 </div>
 
-                <div class="book-dets" id="idNum">
-                    <input type="text" placeholder="ID number" required>
+                <div class="book-dets" >
+                    <input type="text" id="book-idNum" placeholder="ID number" required>
                 </div>
 
                 <div class="book-trip">
-                    <a type="submit" href="" class="booktrip" id="BookTrip">BOOK THE TRIP</a>
+                    <button type="submit" href="" class="booktrip" id="BookTrip" onclick="geberateQR()">BOOK THE TRIP</button>
                 </div>
             </form>
     </div>
@@ -49,5 +49,6 @@
 
 <script src="../scripts/includeHTML.js"></script>  
 <script src="../scripts/appl.js"></script>
+<script src="../scripts/generate_qr.js"></script>
 </body>
 </html>

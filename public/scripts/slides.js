@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.getElementById('date-from').addEventListener('change', function(){
+document.getElementById('datefrom').addEventListener('change', function(){
   var dateFrom = this.value;
-  document.getElementById('date-to').min = dateFrom;
+  document.getElementById('dateto').min = dateFrom;
 });

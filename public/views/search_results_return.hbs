@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
+    <title>Return flights</title>
     <link rel ="stylesheet" href ="../styles/search_results.css" />
     <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
 </head>
@@ -14,46 +14,43 @@
     <div class="page">
 
 
-        <h2>Search results for round trip from Athens to Thessaloniki</h2>
+        <h2>Search results for round trip from {{getCityName destination_id}} to {{getCityName origin_id}}</h2>
 
-        <h4>Available flights from Athens to Thessaloniki. <br> Choose one !</h4>
+    
+        <h4>Available flights from {{getCityName destination_id}} to {{getCityName origin_id}}. <br> Choose one !</h4>
+
         <div class="results-box" id="resultsBox">
+            {{#each flights}}
+            <a href=""></a>
             <div class="flight">
-                <h>19/5/24</h><br><br>
-                <h3>22:00 <br>  Athens (ATH) <span>&#10230;</span></h3>
-                <h3>22:45 <br> Thessaloniki (SKG)</h3>
+                <h>{{date}}</h><br><br>
+                <h3>{{departure time}} <br> {{getCityName destination_id}} ({{getCityCode destination_id}}) <span>&#10230;</span></h3>
+                <h3>{{arrival time}} <br> {{getCityName origin_id}} ({{getCityCode origin_id}})</h3>
 
             </div>
 
-            <h4><i>30€</i></h4>
-            
+
+            <h4><i>{{price}}</i></h4>
+            {{/each}}
             <!-- <li class="book_btn">
-                <a href="signup.html" class="book-button">Book&nbsp;it now for 50€</a>
+                <a href="" class="book-button">Choose the flight</a>
             </li> -->
         
-        
+ 
         </div>
-
-
-        <li class="return">
-            <a href="../views/search_results_return.html" class="return-button" id="returnButton">Choose&nbsp;return flight</a>
-        </li>
 
         <li class="checkout">
             <a href="" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>
         </li>
 
-
     </div> 
-    
 
 
 
     <script src="../scripts/appl.js"></script>
     <script src="../scripts/includeHTML.js"></script> 
-    <script src="../scripts/selection-return.js"></script> 
-    <script src="../scripts/button-visibility.js"></script> 
-   
+    <script src="../scripts/selection.js"></script>
+
 
 </body>
 </html>

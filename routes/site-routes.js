@@ -10,6 +10,11 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
 });
 
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'login.html'));
+    
+    });
+
 router.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'signup.html'));
     
@@ -19,6 +24,12 @@ router.get('/aboutus', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'aboutus.html'));
     
   });
+
+  router.get('/top-destinations', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'top-destinations.html'));
+    
+  });
+
 
   router.get('/search', (req, res) => {
     const { from, to, 'departure-date': departureDate, 'return-date': returnDate, 'trip-choice': tripChoice } = req.query;

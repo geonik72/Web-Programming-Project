@@ -6,6 +6,7 @@ const Flight = require('../models/flight');
 // Define your routes here
 
 
+
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
 });

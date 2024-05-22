@@ -1,55 +1,76 @@
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: "Times New Roman", Times, serif;
     box-sizing: border-box;
 }
 
 
 .aboutpage{
     width: 100%;
-  
     background-image: linear-gradient(to bottom, rgb(59, 82, 182), rgba(100, 201, 248, 0));
     background-position: center;
     background-size: cover;
     position: relative;
-    
     top: 0;
     left: 0;
-    
     height: 100%;
     max-width: 100%;
 }
 
 
-h1{
+.aboutpage h1{
+    font-family: "Times New Roman", Times, serif;
     font-size: 35px;
     color: #b0ebf0;
     margin-top: 80px;
     margin-left: 32px;
 }
 
-.p1{
-    text-align: right;
-}
-
 .lower-page {
-    display: grid;
-    align-items: center; 
-    grid-template-columns: 1.5fr 5fr 3fr;
-    column-gap: 5px;
-   }
+    display: flex;
+    justify-content: center; /* Center the person container horizontally */
+    margin: 50px 32px;
+}
    
-.giorgis-text{
-    margin-left: 50px;
-    font-family: 'Arial';
-    font-size: 1.75vw;
-    height: 40%;
+.person {
+    display: flex;
+    align-items: center; /* Center the image and text container vertically */
+    flex-direction: row; /* Ensure elements are side by side */
+    max-width: 100%; /* Ensure container doesn't overflow */
+    flex-wrap: nowrap; /* Prevent elements from wrapping */
 }
 
-.chris-text{
-    margin-left: 50px;
-    font-size: 1.75vw;
-    height: 40%;
+
+.image-container img{
+    width: 20vw;
+    height: 20vw;
+    margin-top: 50px;
+    margin-left: 32px;
 }
+
+.text-container {
+    flex: 1;
+    margin: 50px;
+}
+
+.text-container h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2vw;
+    margin-left: -10px;
+    margin-top: 50px;
+}
+
+.text-container p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.75vw;
+    width: 50vw;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+
+
+
+
 
 .map {
     padding-bottom: 50%;
@@ -57,7 +78,7 @@ h1{
 }
 
 h2{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 28px;
     color: #000000;
     margin-top: 80px;
@@ -74,4 +95,3 @@ h2{
     margin-top: 60px;
     margin-left: 32px;
 }
-

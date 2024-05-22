@@ -4,41 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sky Hop</title>
-    <link rel ="stylesheet" href ="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/home.css">
     <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
-
+        <!-- Add navbar content here -->
     </nav>
     <div class="page">
-        <img class="image" src="../images/SkyHop (2).png"
-        position: relative; max-width:100%>
+        <img class="image" src="../images/SkyHop (2).png" style="position: relative; max-width: 100%;">
        
         <div class="search-box">
             <h1 id="title">Book your next adventure now!</h1>
-            <form action= "/search" method="GET">
-                <div class="choices" required>
+            <form id="searchForm" action="/search" method="GET">
+                <div class="choices">
                     <label for="one-way">
-                        <input type="radio" id="one-way" name="trip-choice" value="one way">
+                        <input type="radio" id="one-way" name="trip-choice" value="one way" required>
                         One&nbsp;Way
                     </label>
                     <label for="round-trip">
-                        <input type="radio" id="round-trip" name="trip-choice" value="round trip">
+                        <input type="radio" id="round-trip" name="trip-choice" value="round trip" required>
                         Round&nbsp;Trip
                     </label>
                 </div>
 
                 <div class="input-fields">
-
-                    
                     <div class="inputs" id="placefrom">
-                        <input type="text" name="from" placeholder="From" required>
+                        <input type="text" id="from" list="cities" placeholder="From" required>
+                        <datalist id="cities">
+                            <option value="Athens, Greece" data-id="1"></option>
+                            <option value="Porto, Portugal" data-id="2"></option>
+                            <option value="Lisbon, Portugal" data-id="3"></option>
+                            <option value="London, England" data-id="4"></option>
+                            <option value="Copenhagen, Denmark" data-id="5"></option>
+                            <option value="Stockholm, Sweden" data-id="6"></option>
+                            <option value="Berlin, Germany" data-id="7"></option>
+                            <option value="Madrid, Spain" data-id="8"></option>
+                            <option value="Barcelona, Spain" data-id="9"></option>
+                            <option value="Rome, Italy" data-id="10"></option>
+                            <option value="Milan, Italy" data-id="11"></option>
+                            <option value="Paris, France" data-id="12"></option>
+                            <option value="Budapest, Hungary" data-id="13"></option>
+                            <option value="New York, USA" data-id="14"></option>
+                            <option value="Chicago, USA" data-id="15"></option>
+                            <option value="Marrakesh, Morocco" data-id="16"></option>
+                            <option value="Cairo, Egypt" data-id="17"></option>
+                            <option value="Tokyo, Japan" data-id="18"></option>
+                            <option value="Larnaca, Cyprus" data-id="19"></option>
+                            <option value="Thessaloniki, Greece" data-id="20"></option>
+                        </datalist>
                     </div>
-            
+                 
                     <div class="inputs" id="placeto">
-                        <input type="text" name="to" placeholder="To" required>
+                        <input type="text" id="to" list="destinations" placeholder="To" required>
+                        <datalist id="destinations">
+                            <option value="Athens, Greece" data-id="1"></option>
+                            <option value="Porto, Portugal" data-id="2"></option>
+                            <option value="Lisbon, Portugal" data-id="3"></option>
+                            <option value="London, England" data-id="4"></option>
+                            <option value="Copenhagen, Denmark" data-id="5"></option>
+                            <option value="Stockholm, Sweden" data-id="6"></option>
+                            <option value="Berlin, Germany" data-id="7"></option>
+                            <option value="Madrid, Spain" data-id="8"></option>
+                            <option value="Barcelona, Spain" data-id="9"></option>
+                            <option value="Rome, Italy" data-id="10"></option>
+                            <option value="Milan, Italy" data-id="11"></option>
+                            <option value="Paris, France" data-id="12"></option>
+                            <option value="Budapest, Hungary" data-id="13"></option>
+                            <option value="New York, USA" data-id="14"></option>
+                            <option value="Chicago, USA" data-id="15"></option>
+                            <option value="Marrakesh, Morocco" data-id="16"></option>
+                            <option value="Cairo, Egypt" data-id="17"></option>
+                            <option value="Tokyo, Japan" data-id="18"></option>
+                            <option value="Larnaca, Cyprus" data-id="19"></option>
+                            <option value="Thessaloniki, Greece" data-id="20"></option>
+                        </datalist>
                     </div>
+               
                     <br><br>
                     <div class="inputs-date" id="datefrom">
                         <input type="date" name="departure-date" placeholder="From" required>
@@ -48,40 +90,24 @@
                         <input type="date" name="return-date" placeholder="To">
                     </div>
 
-
                     <br><br>
-
                     <div class="search-btn">
                         <button type="submit" id="searchflights">Search for flights</button>
                     </div>
                 </div>
             </form>
         </div>
-      
-
-
-
-    
-
-
-    
-    
+        
         <div class="dest-home">
-            <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Trending&nbsp;Destinations:</span>
+            <span style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Trending&nbsp;Destinations:</span>
         </div> 
     
         <div class="slideshow-container">
-
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 5</div>
                 <a href="/" id="ath">
-                    <img src="../images/athens.jpg"
-                    width="1000px"
-                    height="400px"
-                    position= "relative"
-                    text-align= "center"
-                    max-width= "100%">
+                    <img src="../images/athens.jpg" style="width: 1000px; height: 400px; position: relative; text-align: center; max-width: 100%;">
                     <div class="text">ATHENS</div>
                 </a>
             </div>
@@ -89,12 +115,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">2 / 5</div>
                 <a href="/" id="porto">
-                    <img src="../images/porto.jpg" 
-                    width="1000px"
-                    height="400px"
-                    position= "relative"
-                    text-align= "center"
-                    >
+                    <img src="../images/porto.jpg" style="width: 1000px; height: 400px; position: relative; text-align: center;">
                     <div class="text">PORTO</div>
                 </a>
             </div>
@@ -102,12 +123,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">3 / 5</div>
                 <a href="/" id="madrid">
-                    <img src="../images/madrid.jpg" 
-                    width="1000px"
-                    height="400px"
-                    position= "relative"
-                    text-align= "center"
-                    max-width= "100%">
+                    <img src="../images/madrid.jpg" style="width: 1000px; height: 400px; position: relative; text-align: center; max-width: 100%;">
                     <div class="text">MADRID</div>
                 </a>
             </div>
@@ -115,12 +131,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">4 / 5</div>
                 <a href="/" id="newyork">
-                    <img src="../images/new york.jpg" 
-                    width="1000px"
-                    height="400px"
-                    position= "relative"
-                    text-align= "center"
-                    >
+                    <img src="../images/new york.jpg" style="width: 1000px; height: 400px; position: relative; text-align: center;">
                     <div class="text">NEW YORK</div>
                 </a>
             </div>
@@ -128,12 +139,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">5 / 5</div>
                 <a href="/" id="copen">
-                    <img src="../images/copenhgane.jpg" 
-                    width="1000px"
-                    height="400px"
-                    position= "relative"
-                    text-align= "center"
-                    >
+                    <img src="../images/copenhgane.jpg" style="width: 1000px; height: 400px; position: relative; text-align: center;">
                     <div class="text">COPENHAGEN</div>
                 </a>
             </div>
@@ -145,22 +151,19 @@
         <br>
 
         <!-- The dots/circles -->
-        <div style="text-align:center">
+        <div style="text-align: center;">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
             <span class="dot" onclick="currentSlide(5)"></span>
         </div>
-    
     </div>  
 
     <script src="../scripts/slides.js"></script>  
     <script src="../scripts/appl.js"></script>
     <script src="../scripts/includeHTML.js"></script> 
-    <script src="../scripts/button-visibility.js"></script>  
-
-    
-    
+    <script src="../scripts/button-visibility.js"></script>
+    <script src="../scripts/search.js"></script>
 </body>
 </html>

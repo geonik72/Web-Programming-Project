@@ -4,13 +4,17 @@ const flightRoutes = require('./routes/flights');
 const userRoutes = require('./routes/users');
 const siteRoutes = require('./routes/site-routes'); // Corrected path
 const path = require('path');
+const hbs = require('hbs'); 
+
 
 const app = express();
 
+// Set up Handlebars middleware
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'public', 'views'));
 
-
-
-
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware
 app.use(bodyParser.json());

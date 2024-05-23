@@ -14,30 +14,24 @@
     <div class="page">
 
 
-        <h2>Search results for round trip from {{getCityName destination_id}} to {{getCityName origin_id}}</h2>
+        <h2>Search results from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}</h2>
+        <h4>Available flights from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}. <br> Choose one!</h4>
 
-    
-        <h4>Available flights from {{getCityName destination_id}} to {{getCityName origin_id}}. <br> Choose one !</h4>
-
+        {{#each flights}}
         <div class="results-box" id="resultsBox">
-            {{#each flights}}
-            <a href=""></a>
+            
             <div class="flight">
-                <h>{{date}}</h><br><br>
-                <h3>{{departure time}} <br> {{getCityName destination_id}} ({{getCityCode destination_id}}) <span>&#10230;</span></h3>
-                <h3>{{arrival time}} <br> {{getCityName origin_id}} ({{getCityCode origin_id}})</h3>
+                <h>{{../returnDate}}</h><br>
+                <h5>Duration: {{this.duration}}</h5><br><br>
+                <h3>{{this.departure_time}} <br> {{this.origin_city}} ({{this.origin_code}}) <span>&#10230;</span></h3>
+                <h3>{{this.arrival_time}} <br> {{this.destination_city}} ({{this.destination_code}})</h3>
 
             </div>
 
-
-            <h4><i>{{price}}</i></h4>
-            {{/each}}
-            <!-- <li class="book_btn">
-                <a href="" class="book-button">Choose the flight</a>
-            </li> -->
-        
- 
+            <h4><i>{{this.price}}</i></h4>
+           
         </div>
+        {{/each}}
 
         <li class="checkout">
             <a href="" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>

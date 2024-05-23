@@ -14,36 +14,38 @@
     <div class="page">
 
 
-        <h2>Search results for round trip from {{getCityName origin_id}} to {{getCityName destination_id}}</h2>
-
-        <h4>Available flights from {{getCityName origin_id}} to {{getCityName destination_id}}. <br> Choose one !</h4>
+        <h2>Search results from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}</h2>
+        <h4>Available flights from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}. <br> Choose one!</h4>
+        
+        {{#each flights}}
         <div class="results-box" id="resultsBox">
-            {{#each flights}}
+            
             <div class="flight">
-                <h>{{date}}</h><br><br>
-                <h3>{{departure time}} <br>  {{getCityName origin_id}} ({{getCityCode origin_id}}) <span>&#10230;</span></h3>
-                <h3>{{arrival time}} <br> {{getCityName destination_id}} ({{getCityCode destination_id}})</h3>
-
+                <h>{{../departureDate}}</h><br><br>
+                <h5>Duration: {{this.duration}}</h5><br>
+                <h3>{{this.departure_time}} <br> {{this.origin_city}} ({{this.origin_code}}) <span>&#10230;</span></h3>
+                <h3>{{this.arrival_time}} <br> {{this.destination_city}} ({{this.destination_code}})</h3>
             </div>
 
-            <h4><i>{{price}}</i></h4>
-            {{/each}}
-            
-            <!-- <li class="book_btn">
-                <a href="signup.html" class="book-button">Book&nbsp;it now for 50€</a>
-            </li> -->
-        
-        
+             <h4><i>{{this.price}}</i></h4>
         </div>
+        {{/each}}
+            
+        
 
-
+        {{#if isRoundTrip}}
         <li class="return">
             <a href="/search_results_return" class="return-button" id="returnButton">Choose&nbsp;return flight</a>
         </li>
-
+        {{/if}}
+    
+        {{#if isOneWay}}
         <li class="checkout">
             <a href="" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>
         </li>
+        {{/if}}
+      
+
 
 
     </div> 
@@ -54,8 +56,8 @@
     <script src="../scripts/appl.js"></script>
     <script src="../scripts/includeHTML.js"></script> 
     <script src="../scripts/selection-return.js"></script> 
-
-   
+    <!-- <script src="../scripts/button-visibility.js"></script> -->
+    <script src="../scripts/selection-checkout.js"></script> 
 
 </body>
 </html>

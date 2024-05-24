@@ -36,6 +36,14 @@ router.get('/aboutus', (req, res) => {
     
   });
 
+  router.get('/booking-form', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'booking-form.html'));
+  });
+
+  router.get('/search_results_return', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'search_results_return.html'));
+  });
+
 
 
   router.get('/search', (req, res) => {

@@ -25,12 +25,13 @@ db.exec(`
 		PRIMARY KEY("id")
 );
 
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT,
-        email TEXT,
-        password TEXT
-    );
+CREATE TABLE IF NOT EXISTS users (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	surname TEXT, 		
+	email TEXT,
+	password TEXT
+);
 `);
 
 module.exports = db;

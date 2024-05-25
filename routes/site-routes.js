@@ -7,7 +7,7 @@ const userController = require('../controllers/userController');
 
 // Global variable to store search parameters
 // TODO use a better way to pass the search parameters between routes
-let globalSearchParams = {};
+
 
 
 
@@ -43,9 +43,8 @@ router.get('/error', (req, res) => {
 // Search route for flights
 router.get('/search', (req, res) => {
     const { from, to, 'departure-date': departureDate, 'return-date': returnDate, 'trip-choice': tripChoice } = req.query;
+    req.session.searchParams = { from, to, departureDate, returnDate, tripChoice };
 
-    // Store search parameters in the global variable
-    globalSearchParams = { from, to, departureDate, returnDate, tripChoice };
 
     flightController.searchFlights(req, res, from, to, departureDate, returnDate, tripChoice);
 });
@@ -53,8 +52,9 @@ router.get('/search', (req, res) => {
 // Return search route for flights with swapped from and to
 router.get('/search_results_return', (req, res) => {
     // Use the global search parameters and swap from and to
-    const { from, to, departureDate, returnDate, tripChoice } = globalSearchParams;
-    
+   // const { from, to, departureDate, returnDate, tripChoice } = globalSearchParams;
+    const { from, to, departureDate, returnDate, tripChoice } = req.session.searchParams;
+
     // Call the searchFlights function with swapped from and to
     flightController.searchFlights(req, res, to, from, returnDate, departureDate, tripChoice);
 });

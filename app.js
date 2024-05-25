@@ -10,10 +10,12 @@ const siteSession = require('./app-setup/app-setup-session'); // Corrected path
 
 const app = express();
 
+// Set up session middleware
+app.use(siteSession);
 // Set up Handlebars middleware
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'public', 'views'));
-app.use(siteSession);
+
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));

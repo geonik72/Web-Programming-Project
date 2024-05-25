@@ -1,5 +1,5 @@
 const Database = require('better-sqlite3');
-const db = new Database('db/SkyHop.db', { verbose: console.log });
+const db = new Database('db/SkyHop.db');
 
 // Initialize tables if they don't exist
 db.exec(`

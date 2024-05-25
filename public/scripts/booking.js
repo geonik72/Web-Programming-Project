@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const bookTripButton = document.getElementById('BookTrip');
 
-    bookTripButton.addEventListener('click', function (event) {
+    bookTripButton.addEventListener('submit', function (event) {
         //event.preventDefault(); // Prevent the form from submitting
         
         // Get input values

@@ -55,7 +55,6 @@ router.get('/search', (req, res) => {
     const { from, to, 'departure-date': departureDate, 'return-date': returnDate, 'trip-choice': tripChoice } = req.query;
     req.session.searchParams = { from, to, departureDate, returnDate, tripChoice };
 
-
     flightController.searchFlights(req, res, from, to, departureDate, returnDate, tripChoice);
 });
 
@@ -66,7 +65,7 @@ router.get('/search_results_return', (req, res) => {
     const { from, to, departureDate, returnDate, tripChoice } = req.session.searchParams;
 
     // Call the searchFlights function with swapped from and to
-    flightController.searchFlights(req, res, to, from, returnDate, departureDate, tripChoice);
+    //flightController.searchFlights(req, res, to, from, returnDate, departureDate, tripChoice);
     searchFlightsReturn(req, res, to, from, returnDate, departureDate, tripChoice);
 
 });
@@ -106,6 +105,31 @@ const searchFlightsReturn = async (req, res, from, to, departureDate, returnDate
       res.status(500).send({ error: 'An error occurred while searching for flights' });
   }
 };
+
+
+
+
+
+router.post('/submitBooking', (req, res) => {
+    const { name, surname, email, phone, idNum} = req.body;
+    const ticketId = Math.floor(Math.random() * 1000000); // Generate a random ticket ID
+
+    //const { from, to, departureDate, returnDate, tripChoice } = req.session.searchParams;
+
+    // Call the searchFlights function with swapped from and to
+    //flight = flightController.searchFlights(req, res, from, to, departureDate, returnDate, tripChoice);
+   
+    //searchFlightsReturn(req, res, to, from, returnDate, departureDate, tripChoice);
+    //console.log("Flight Data:", flight); // Log flight data
+
+    res.render('myticket', { name, surname, email, phone, idNum, ticketId});
+});
+
+
+
+
+
+
 
 
 

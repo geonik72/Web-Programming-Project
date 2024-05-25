@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>My Ticket</title>
     <link rel ="stylesheet" href ="../styles/myticket.css" />
     <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+
 </head>
 <body>
     <nav class="navbar">
@@ -13,62 +15,92 @@
     </nav>  
     <div class="tickpage">
         
-        <h id="title">My&nbsp;Ticket</h>
+        
 
         <div class="ticket-box">
             
-            
+            <!-- <h id="title">My&nbsp;Ticket</h> -->
             
             <div class="ticket-details">
 
-                <div id="imgBox">
-                    <img src="/" id="qrImage">
+                <div class="imgbox" id="imgBox">
+                    <img src="" id="qrImage">
+                    
                 </div>
+                <br>
+                <br>
 
                 <div class="tick-dets" id="ticketid">
-                    <p>TICKET ID</p>
+                    <p>Ticket ID: <b>{{ticketId}}</b></p>
                 </div>
 
                 <div class="tick-dets" id="tick-name">
-                    {{this.name}}
+                    <p>Name: <b>{{name}}</b></p>
                 </div>
 
                 <div class="tick-dets" id="tick-surname">
-                    {{this.surname}}
+                    <p>Surname: <b>{{surname}}</b></p>
                 </div>
 
                 <div class="tick-dets" id="tick-email">
-                    {{this.email}}
+                    <p>Email: <b>{{email}}</b></p>
                 </div>
 
                 <div class="tick-dets" id="tick-phone">
-                    {{this.phone}}
+                    <p>Phone Number: <b>{{phone}}</b></p>
                 </div>
 
                 <div class="tick-dets" id="tick-idNum">
-                    {{this.idNum}}
+                    <p>ID Number: <b>{{idNum}}</b></p>
                 </div>
 
+
+          
+              
+
                 <div class="tick-dets" id="tick-departure">
-                    <p>DEPARTURE</p>
+                    <p>Departure: {{flight.origin_city}}</p>
                 </div>
 
                 <div class="tick-dets" id="tick-arrival">
-                    <p>ARRIVAL</p>
+                    <p>Arrival: {{this.arrival_city}}</p>
                 </div>
 
                 <div class="tick-dets" id="tick-date">
-                    <p>DATE</p>
+                    <p>Dates: </p>
                 </div>
+                
+               
 
                 
         </div>
     </div>
 </div>
 
+ <script>
+        //Generate the QR code
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrData = {
+                name: '{{name}}',
+                surname: '{{surname}}',
+                email: '{{email}}',
+                phone: '{{phone}}',
+                idNum: '{{idNum}}',
+                ticketId: '{{ticketId}}'
+            };
+
+            const qrString = JSON.stringify(qrData);
+            const qrImage = document.getElementById('qrImage');
+
+            QRCode.toDataURL(qrString, { width: 150, height: 150,}, function (err, url) {
+                if (err) console.error(err);
+                qrImage.src = url;
+            });
+        });
+</script>
+
 <script src="../scripts/includeHTML.js"></script>  
 <script src="../scripts/appl.js"></script>
-<script src="../scripts/generate_qr.js"></script>
 
 
 </body>

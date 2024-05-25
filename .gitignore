@@ -5,3 +5,9 @@ skyhop.db
 run.bat
 
 .env
+
+.dockerignore
+
+fly.toml
+
+dockerfile

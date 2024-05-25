@@ -19,29 +19,29 @@
             <i class="fa-solid fa-id-card"></i>
             
             
-            <form class="booking-details" action="/aboutus" method="get">
+            <form class="booking-details" action="/myticket" method="get" id="bookingForm">
                 <div class="book-dets" >
-                    <input type="text" id="book-name" placeholder="Name" required>
+                    <input type="text" id="book-name" name="name" placeholder="Name" required>
                 </div>
 
                 <div class="book-dets" >
-                    <input type="text"  id="book-surname" placeholder="Surname" required>
+                    <input type="text"  id="book-surname" name="surname" placeholder="Surname" required>
                 </div>
 
                 <div class="book-dets" >
-                    <input type="email" id="book-email" placeholder="Email" required>
+                    <input type="email" id="book-email" name="email" placeholder="Email" required>
                 </div>
 
                 <div class="book-dets" >
-                    <input type="number" id="book-phone" placeholder="Phone number" required>
+                    <input type="number" id="book-phone" name="phone" placeholder="Phone number" required>
                 </div>
 
                 <div class="book-dets" >
-                    <input type="text" id="book-idNum" placeholder="ID number" required>
+                    <input type="text" id="book-idNum" name="idNum" placeholder="ID number" required>
                 </div>
 
                 <div class="book-trip">
-                    <button type="submit" href="" class="booktrip" id="BookTrip" onclick="geberateQR()">BOOK THE TRIP</button>
+                    <button type="submit" class="booktrip" id="BookTrip" >BOOK THE TRIP</button>
                 </div>
             </form>
     </div>

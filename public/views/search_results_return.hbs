@@ -21,7 +21,7 @@
         <div class="results-box" id="resultsBox">
             
             <div class="flight">
-                <h>{{../returnDate}}</h><br>
+                <h>{{../departureDate}}</h><br>
                 <h5>Duration: {{this.duration}}</h5><br><br>
                 <h3>{{this.departure_time}} <br> {{this.origin_city}} ({{this.origin_code}}) <span>&#10230;</span></h3>
                 <h3>{{this.arrival_time}} <br> {{this.destination_city}} ({{this.destination_code}})</h3>
@@ -34,7 +34,7 @@
         {{/each}}
 
         <li class="checkout">
-            <a href="" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>
+            <a href="/booking-form" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>
         </li>
 
     </div> 

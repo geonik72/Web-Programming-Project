@@ -5,6 +5,7 @@ const userRoutes = require('./routes/users');
 const siteRoutes = require('./routes/site-routes'); // Corrected path
 const path = require('path');
 const hbs = require('hbs'); 
+const siteSession = require('./app-setup/app-setup-session'); // Corrected path
 
 
 const app = express();
@@ -12,6 +13,7 @@ const app = express();
 // Set up Handlebars middleware
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'public', 'views'));
+app.use(siteSession);
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));

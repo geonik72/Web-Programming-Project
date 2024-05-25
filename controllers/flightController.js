@@ -36,12 +36,21 @@ const searchFlights = async (req, res, from, to, departureDate, returnDate, trip
             returnDate
         });
 
+      
+
     } catch (error) {
         console.error('Error searching for flights:', error);
         res.status(500).send({ error: 'An error occurred while searching for flights' });
     }
 };
 
+
+
+
+
+
+
 module.exports = {
     searchFlights
+
 };

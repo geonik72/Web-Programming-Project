@@ -8,13 +8,13 @@
 .ticket-box{
     width:90%;
     max-width: 500px;
-    max-height: 600px;
+    max-height: 900px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #dbd0d0fa;
-    padding: 50px 60px 70px;
+    padding: 30px 6px 30px;
     text-align: center;
     border-radius: 30px;
     background-color: rgba(121, 212, 212, 0.664);
@@ -33,20 +33,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
-    background-color: rgba(121, 212, 212, 0.664);
-    
-    margin-top: 10px;
-    padding: 10px; 
-    box-sizing: border-box; 
+    font-size: 14px;
+    text-align: left;
+    margin-top: 8px;
+    padding: 3px; 
     overflow: hidden; 
     
 }
 
-.tick-dets p{
-    margin: 0;
-    font-size: 16px;
-}
+
 
 .ticket-box i{
     margin-bottom: 40px;
@@ -54,12 +49,14 @@
 }
 
 
+
+
 .tickpage h{
     position: absolute;
     font-size: 45px;
     text-align: center;
    
-    top: 10%;
+    top: 3%;
     left: 50%;
     transform: translate(-50%, -50%);
     color:#ffffff;

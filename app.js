@@ -19,6 +19,7 @@ app.use(siteSession);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
@@ -36,7 +37,6 @@ app.use('/', siteRoutes);
 // Routes
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
-
 
 
 

@@ -42,6 +42,29 @@ router.get('/myticket', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'myticket.hbs'));
 });
 
+
+router.get('/navbar', (req, res) => {
+    res.render('navbar', { layout: false });
+});
+
+
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/');
+        }
+        res.clearCookie('connect.sid');
+        res.redirect('/');
+    });
+});
+
+
+
+
+
+
+
+
 // Search route for flights
 router.get('/search', (req, res) => {
     const { from, to, 'departure-date': departureDate, 'return-date': returnDate, 'trip-choice': tripChoice } = req.query;

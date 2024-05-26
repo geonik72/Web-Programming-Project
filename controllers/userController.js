@@ -28,13 +28,29 @@ const login = async (req, res) => {
         // Save user information in the session
         req.session.user = user;
         res.redirect('/');
+        console.log(user)
     } catch (error) {
         console.error('Error during login:', error);
         res.status(500).send('Error during login');
     }
 };
 
+
+
+const logout = (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/');
+        }
+        res.clearCookie('connect.sid');
+        res.redirect('/');
+    });
+};
+
+
+
 module.exports = {
     signup,
-    login
+    login,
+    logout
 };

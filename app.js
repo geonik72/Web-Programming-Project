@@ -40,13 +40,23 @@ app.use('/', siteRoutes);
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
 
-
 app.get('api/login-status', (req,res) => {
     res.json({ loggedIn: !!req.session.user});
     console.log(req.session.user);
 });
 
 
+app.use((req, res, next) => {
+    res.locals.user = req.session.user || null;
+    next();
+});
+
+
+
+module.exports = (req, res, next) => {
+    res.locals.user = req.session.user || null;
+    next();
+};
 
 
 

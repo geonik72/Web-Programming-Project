@@ -8,6 +8,7 @@ const ticektController = require('../controllers/ticketController');
 // User authentication routes
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
+router.get('/logout', userController.logout);
 
 // Static HTML pages routes
 router.get('/', (req, res) => {
@@ -46,18 +47,6 @@ router.get('/myticket', (req, res) => {
 router.get('/navbar', (req, res) => {
     res.render('navbar', { layout: false });
 });
-
-
-router.get('/logout', (req, res) => {
-    req.session.destroy(err => {
-        if (err) {
-            return res.redirect('/');
-        }
-        res.clearCookie('connect.sid');
-        res.redirect('/');
-    });
-});
-
 
 
 

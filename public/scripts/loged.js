@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('.navbar_btn a[href="/signup"]').style.display = 'none';
             } else {
                 document.querySelector('.navbar_links[href="/myprofile"]').style.display = 'none';
-                document.querySelector('.logout-btn').style.display = 'none';
+                document.querySelector('.navbar_btn a[href="/logout"]').style.display = 'none';
             }
         })
         .catch(error => console.error("Error checking login status: ", error));
         })
         .catch(error => console.error('Error loading navbar:', error));
 });
+
+//module.exports = userLoggedIn

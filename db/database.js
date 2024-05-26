@@ -39,18 +39,10 @@ CREATE TABLE IF NOT EXISTS top_destinations (
 	details TEXT NOT NULL
 	
 );
-
-
 `);
 
 
 
-function getDestinationByName(name) {
-    const stmt = db.prepare('SELECT name, image, details FROM top_destinations WHERE name = ?');
-    return stmt.get(name);
-}
 
-module.exports = {
-	db,
-	getDestinationByName
-};
+
+module.exports = db;

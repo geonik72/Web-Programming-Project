@@ -4,7 +4,7 @@ const router = express.Router();
 const flightController = require('../controllers/flightController');
 const userController = require('../controllers/userController');
 const ticektController = require('../controllers/ticketController');
-const { getDestinationByName } = require('../db/database');
+const destinationController  = require('../controllers/destinationController');
 
 
 // User authentication routes
@@ -56,7 +56,7 @@ router.get('/navbar', (req, res) => {
 router.get('/destination/:name', (req, res) => {
     const destinationName = req.params.name;
     try {
-        const destination = getDestinationByName(destinationName);
+        const destination = destinationController.getDestinationByName(destinationName);
         if (destination) {
             res.render('destination', {
                 name: destination.name,

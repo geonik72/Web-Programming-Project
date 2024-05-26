@@ -1,3 +1,13 @@
 node_modules/
-run.bat
+
 skyhop.db
+
+run.bat
+
+.env
+
+.dockerignore
+
+fly.toml
+
+dockerfile

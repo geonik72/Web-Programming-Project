@@ -1,0 +1,37 @@
+*{
+    font-family: "Times New Roman", Times, serif;
+    box-sizing: border-box;
+    
+}
+
+
+.lowerpage{
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(59, 82, 182), rgba(100, 201, 248, 0));
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 100%;
+    margin-top: -80px;
+}
+
+
+.page h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 45px;
+    color: #d9e7e9;
+    margin-top: 100px; /* Remove top margin */
+    padding-top: 80px; /* Add padding to move it down from the top */
+    padding-left: 32px; /* Adjust padding as needed */
+}
+
+.text{
+    font-family: "Times New Roman", Times, serif;
+    color: #0b373b;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 26px;
+}

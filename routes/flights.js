@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Flight = require('../models/flight');
 
+
 // Create a new flight
 router.post('/', (req, res) => {
     const flight = Flight.create(req.body);

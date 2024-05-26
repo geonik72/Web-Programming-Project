@@ -9,7 +9,7 @@
 <body >
     <div class="page">
     <nav class="navbar">
-        <div class="navbar_container">
+        <div class="navbar_container" id="navbar_container">
             <a href="/" id="navbar_logo"><img class="image_rem" src="../images/SkyHop removed.png"></a>
             <div class="navbar_toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -24,21 +24,33 @@
                     <a href="/aboutus" class="navbar_links">About&nbsp;us</a>
                 </li>
                 <li class="navbar_item">
+                    <a href="/myBookings" class="navbar_links">My Bookings</a>
+                </li>
+
+
+                {{#if user}}
+                <li class="navbar_item">
+                    <a href="/aboutus" class="navbar_links">My profile</a>
+                </li>
+                <li class="navbar_btn">
+                    <a href="/" class="button">Logout</a>
+                </li>
+
+                {{else}}
+                <li class="navbar_item">
                     <a href="/login" class="navbar_links">Login</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="/myprofile" class="navbar_links">My profile</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="/logout" class="logout-btn">Logout</a>
                 </li>
                 <li class="navbar_btn">
                     <a href="/signup" class="button">Sign&nbsp;up</a>
                 </li>
+                
+                {{/if}}
             </ul>
         </div>
     </nav>
     </div>
     <script src="../scripts/appl.js"></script>
+    <script src="../scripts/loged.js"></script>
+    <script src="/controllers/userController.js"></script>
     </body>
 </html>

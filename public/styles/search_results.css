@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.page{
+    width: 100%;
+    height: 100hv;
+    background-image: linear-gradient(to bottom, rgb(0, 28, 151), rgb(61, 155, 199));
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    margin-top: 0px;
+}
+
+
+.results-box{
+    width:90%;
+    max-width: 680px;
+    max-height: 350px;
+   
+    position: relative;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background: #dbd0d0fa;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: rgba(121, 212, 212, 0.664);
+    outline:rgba(190, 240, 240, 0.733);
+    border-width: thick;
+    border-style: solid;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+
+.results-box.selected {
+    border: 8px solid rgb(0, 23, 126); /* Change color as desired */
+}
+
+.results-box h3{
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.flight{
+    text-align: center;
+}
+
+
+.results-box h{
+    font-size: 20px;
+    margin-top: -50px;
+}
+
+
+.page h2{
+    margin-top: 0px;
+    margin-bottom: 10px
+}
+
+.page h4{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.results-box h4{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+/* Media queries for different screen sizes */
+@media screen and (min-width: 600px) {
+    .results-box h3{
+        font-size: 21px;
+    }  
+
+    .book-button{
+        font-size: 25px;
+    }
+
+    .checkout-button{
+        font-size: 23px;
+    }
+
+    .return-button{
+        font-size: 23px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .results-box h3{
+        font-size: 23px;    
+    }
+
+    .book-button{
+        font-size: 30px;
+    }
+
+    .checkout-button{
+        font-size: 27px;
+    }
+
+    .return-button{
+        font-size: 27px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .results-box h3{
+        font-size: 27px;
+    }
+
+    .book-button{
+        font-size: 35px;
+    }
+
+    .checkout-button{
+        font-size: 30px;
+    }
+
+    .return-button{
+        font-size: 30px;
+    }
+}
+
+
+
+.book_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+} 
+
+.book-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 50%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: #15a89c;
+    color: #000;
+    position: relative;
+    margin-top: 30px;
+}
+
+.book-button:hover{
+    background: #077a7e;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+
+.checkout-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 15%;
+    width: 20%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: #526855;
+    color: #000;
+    position: absolute;
+    margin-top: 120px;
+    pointer-events: none;
+
+}
+
+
+.checkout-button.enabled {
+    background: #04e022;
+    color: black;
+    pointer-events: auto; /* Enable the button */
+}
+
+
+.checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.return-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 15%;
+    width: 20%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: #526855;
+    color: #000;
+    position: absolute;
+    margin-top: 120px;
+    pointer-events: none;
+
+}
+
+
+.return-button.enabled {
+    background: #04e022;
+    color: black;
+    pointer-events: auto; /* Enable the button */
+}
+
+.return{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}

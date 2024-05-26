@@ -33,7 +33,7 @@ class Flight {
         `).get(id);
     }
 
-    static findByOriginAndDestination(origin_id, destination_id) {
+    static findByOriginAndDestination(originCity, destinationCity) {
         return db.prepare(`
             SELECT flights.*, 
                    origin.City as origin_city, origin.Code as origin_code, origin.Country as origin_country,
@@ -42,7 +42,7 @@ class Flight {
             JOIN airports AS origin ON flights.origin_id = origin.id
             JOIN airports AS destination ON flights.destination_id = destination.id
             WHERE flights.origin_id = ? AND flights.destination_id = ?
-        `).all(origin_id, destination_id);
+        `).all(originCity, destinationCity);
     }
 
     static update(id, data) {

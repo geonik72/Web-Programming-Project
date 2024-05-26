@@ -1,161 +1,162 @@
 *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
 }
 
 
 .page{
-    width: 100%;
-    height: 100hv;
-    background-image: linear-gradient(to bottom, rgb(0, 5, 27), rgb(9, 63, 88));
-    background-position: center;
-    background-size: cover;
-    position: relative;
+  width: 100%;
+  height: 100hv;
+  background-image: linear-gradient(to bottom, rgb(0, 5, 27), rgb(9, 63, 88));
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 .image {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    
-    max-width: 100%;
-    
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  
+  max-width: 100%;
+  
 }
 .search-box{
-    width:90%;
-    max-width: 1000px;
-    max-height: 800px;
-   
-    position: relative;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #dbd0d0fa;
-    padding: 50px 60px 70px;
-    text-align: center;
-    border-radius: 30px;
-    background-color: rgba(121, 212, 212, 0.664);
-    outline:rgba(190, 240, 240, 0.733);
-    border-width: thick;
-    border-style: solid;
-    margin-top: 180px;
+  width:auto;
+  max-width: 1000px;
+  max-height: 800px;
+ 
+  position: relative;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #dbd0d0fa;
+  padding: 50px 60px 70px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgba(121, 212, 212, 0.664);
+  outline:rgba(190, 240, 240, 0.733);
+  border-width: thick;
+  border-style: solid;
+  margin-top: 180px;
 }
 
 .inputs{
-    background: #eaeaea;
-    
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    max-height: 65px;
-    transition: max-height 0.5s;
-    overflow: hidden;
-    width: 49%;
-    max-width: 100%;
-    display: inline-block;
-    
-    
+  background: #eaeaea;
+  
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+  width: 49%;
+  max-width: 100%;
+  display: inline-block;
+  
+  
 }
 
 .inputs-date{
-    background: #eaeaea;
-    
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-height: 65px;
-    transition: max-height 0.5s;
-    overflow: hidden;
-    width: 49%;
-    display: inline-block;
-    max-width: 100%;
-    
+  background: #eaeaea;
+  
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+  width: 49%;
+  display: inline-block;
+  max-width: 100%;
+  
 }   
 
 .input-fields i{
-    margin-left: 10px;
-    color: #999;
-    display: inline-block;
+  margin-left: 10px;
+  color: #999;
+  display: inline-block;
 }
 
 input{
-    width: 100%;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    padding: 18px 15px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
 }
 
-.search-btn a{
-    text-decoration: none;
-    padding: 0.5rem;
-    border: 1px solid #333333;
-    border-radius: 28px;
-    position: relative;
-    top: 15%;
-    text-align: center;
-    background-color: rgb(190, 240, 240);
-    max-width: 300px;
-    color:#333333;
-    font-size: 20px;
+.search-btn button{
+  text-decoration: none;
+  padding: 0.5rem;
+  border: 1px solid #333333;
+  border-radius: 28px;
+  position: relative;
+  top: 15%;
+  text-align: center;
+  background-color: rgb(190, 240, 240);
+  max-width: 300px;
+  color:#333333;
+  font-size: 20px;
 
 }
 
 .search-box h1{
-    font-size: 30px;
-    margin-bottom: 60px;
-    margin-top: 5px;
-    color:#0f015e;
-    position: relative;
-    text-align: center;
-    margin-left: 0.2vw;
+  font-size: 30px;
+  margin-bottom: 60px;
+  margin-top: 5px;
+  color:#0f015e;
+  position: relative;
+  text-align: center;
+  margin-left: 0.2vw;
+  font-family: "Times New Roman", Times, serif;
 }
 
 
 .choices {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 6px;
-    margin-bottom: 15px;
-    font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 6px;
+  margin-bottom: 15px;
+  font-size: 17px;
 }
 
 .choices label {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust as needed */
 }
 
 .choices input[type="radio"] {
-    margin-right: 5px; /* Adjust as needed */
+  margin-right: 5px; /* Adjust as needed */
 }
 
 .amount{
-    margin-bottom: 20px;
-    font-size: 17px;
-    margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  margin-top: 25px;
 }
 
 
 
 
 .dest-home{
-    font-size: 40px;
-    
-    
-    font-family: "Lucida Console", "Courier New", monospace;
-    margin-top: -200px;
-    margin-bottom: 150px;
-    color:#0f015e;
-    position: relative;
-    text-align: center;
-    margin-left: 0.2vw;
+  font-size: 40px;
+  
+  
+  font-family: "Lucida Console", "Courier New", monospace;
+  margin-top: -200px;
+  margin-bottom: 150px;
+  color:#0f015e;
+  position: relative;
+  text-align: center;
+  margin-left: 0.2vw;
 }
 
 
@@ -163,95 +164,120 @@ input{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
   position: relative;
   margin-top: -150px;
-  left: 22%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
- 
+display: none;
+
 }
 
 /* Next & previous buttons */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+z-index: 1;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+right: 0;
+border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+background-color: rgba(0,0,0,0.8);
 }
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-weight: bold;
-  font-size: 35px;
-  padding: 8px 42px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: right;
-  font-family: 'Times New Roman', Times, serif;
-  outline: #000;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+color: #f2f2f2;
+font-weight: bold;
+font-size: 35px;
+padding: 8px 42px;
+position: absolute;
+bottom: 8px;
+width: 100%;
+text-align: right;
+font-family: 'Times New Roman', Times, serif;
+outline: #000;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: black;
+z-index: 1;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
 }
 
 /* The dots/bullets/indicators */
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 1.2s ease;
-  margin-top: 5px;
-  margin-bottom: 100px;
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 1.2s ease;
+margin-top: 5px;
+z-index: 1;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+from {opacity: .4}
+to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 768px) {
+  .slideshow-container {
+    margin-top: -100px; /* Adjust as needed */
+  }
+  
+  .prev, .next {
+    font-size: 14px; /* Adjust as needed */
+  }
+  
+  .text {
+    font-size: 24px; /* Adjust as needed */
+    padding: 8px 16px; /* Adjust as needed */
+  }
+  
+  .dot {
+    height: 10px; /* Adjust as needed */
+    width: 10px; /* Adjust as needed */
+    margin-top: 3px; /* Adjust as needed */
+  }
 }

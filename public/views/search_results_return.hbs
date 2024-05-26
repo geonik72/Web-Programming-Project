@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return flights</title>
+    <link rel ="stylesheet" href ="../styles/search_results.css" />
+    <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar-container" id="navbar-container">
+
+    </nav>
+    <div class="page">
+
+
+        <h2>Search results from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}</h2>
+        <h4>Available flights from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}. <br> Choose one!</h4>
+
+        {{#each flights}}
+        <div class="results-box" id="resultsBox">
+            
+            <div class="flight">
+                <h>{{../departureDate}}</h><br>
+                <h5>Duration: {{this.duration}}</h5><br><br>
+                <h3>{{this.departure_time}} <br> {{this.origin_city}} ({{this.origin_code}}) <span>&#10230;</span></h3>
+                <h3>{{this.arrival_time}} <br> {{this.destination_city}} ({{this.destination_code}})</h3>
+
+            </div>
+
+            <h4><i>{{this.price}}</i></h4>
+           
+        </div>
+        {{/each}}
+
+        <li class="checkout">
+            <a href="/booking-form" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>
+        </li>
+
+    </div> 
+
+
+
+    <script src="../scripts/appl.js"></script>
+    <script src="../scripts/includeHTML.js"></script> 
+    <script src="../scripts/selection.js"></script>
+    <script src="../scripts/loged.js"></script>
+
+
+</body>
+</html>

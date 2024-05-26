@@ -99,13 +99,11 @@ router.get('/search_results_return', (req, res) => {
 // Submit booking route
 router.post('/ticket', (req, res) => {
     const { name, surname, email, phone, idNum } = req.body;
-    req.session.phone = phone;
-    req.session.idNum = idNum;
     const ticketId = Math.floor(Math.random() * 1000000); // Generate a random ticket ID
     req.session.ticketId = ticketId;
     const { from, to, departureDate, returnDate, tripChoice } = req.session.searchParams;
     ticketController.renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate, tripChoice);
-    ticketController.bookTrip(req, res, req.session.user.id, req.session.flightId, departureDate, from, to);
+    ticketController.bookTrip(req, res, req.session.user.id, name, surname, email, phone, idNum, ticketId, from, to, departureDate, req.session.flightId);
 
 });
 
@@ -116,6 +114,12 @@ router.get('/myBookings', (req, res) => {
 
     const userId = req.session.user.id;
 
+    const name = req.session.user.name;
+    const surname = req.session.user.surname;
+    const email = req.session.user.email;
+    //temp solution until i get the info from the actual form
+
+
     try {
         const stmt = db.prepare(`
             SELECT 
@@ -125,7 +129,14 @@ router.get('/myBookings', (req, res) => {
                 flights."departure time" AS departure_time, 
                 flights."arrival time" AS arrival_time, 
                 flights.duration, 
-                flights.price
+                flights.price,
+                bookings.date AS date, 
+                bookings.name AS name,
+                bookings.surname AS surname,
+                bookings.email AS email,
+                bookings.phone AS phone,
+                bookings.idNum AS idNum,
+                bookings.ticketId AS ticketId
             FROM bookings
             JOIN flights ON bookings.flight_id = flights.id
             JOIN airports AS origin ON flights.origin_id = origin.id  -- Join with airports table to get origin city name
@@ -134,8 +145,8 @@ router.get('/myBookings', (req, res) => {
         `);
 
         const bookings = stmt.all(userId);
-        console.log(bookings);
-        res.render('booked-trips', { bookings });
+    
+        res.render('booked-trips', { bookings});
     } catch (error) {
         console.error('Error retrieving bookings:', error);
         res.status(500).send('Error retrieving bookings');

@@ -2,6 +2,7 @@ const Database = require('better-sqlite3');
 const db = new Database('db/SkyHop.db');
 
 // Initialize tables if they don't exist
+//i need booking to also have name, surname, email, phone, idNum, ticketId
 db.exec(`
     CREATE TABLE IF NOT EXISTS flights (
         "id"	INTEGER NOT NULL,
@@ -46,6 +47,12 @@ CREATE TABLE IF NOT EXISTS bookings (
 	date TEXT,
 	departure TEXT,
 	arrival TEXT,
+	name TEXT,
+	surname TEXT,
+	email TEXT,
+	phone TEXT,
+	idNum TEXT,
+	ticketId TEXT,
 	FOREIGN KEY(user_id) REFERENCES users(id),
 	FOREIGN KEY(flight_id) REFERENCES flights(id)
 );

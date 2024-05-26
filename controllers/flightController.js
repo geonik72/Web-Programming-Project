@@ -13,7 +13,7 @@ const searchFlights = async (req, res, from, to, departureDate, returnDate, trip
         if (results.length === 0) {
             return res.status(404).sendFile(path.join(__dirname, '..', 'public', 'views', 'error.html'));
         }
-        console.log(results);
+      
         const processedResults = results.map(flight => ({
             ...flight,
             id : flight.id,

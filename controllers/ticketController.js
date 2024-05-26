@@ -47,11 +47,11 @@ function renderTickets(req, res, name, surname, email, phone, idNum, ticketId, f
         isRoundTrip
     });
 }
-function bookTrip(req, res, userId, flightId, date,from, to) {
+function bookTrip(req, res, userId, name, surname, email, phone, idNum, ticketId, from, to, date, flightId) {
     try {
-        const stmt = db.prepare('INSERT INTO bookings (user_id, flight_id, date, departure, arrival) VALUES (?, ?, ?, ?, ?)');
-        stmt.run(userId, flightId, date, from, to);
-       
+        const stmt = db.prepare('INSERT INTO bookings (user_id, flight_id, date, departure, arrival, name, surname, email, phone, idNum, ticketId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        stmt.run(userId, flightId, date, from, to, name, surname, email, phone, idNum, ticketId);
+       //req.session.user.id,name, surname, email, phone, idNum, ticketId, from, to, departureDate, req.session.flightId, tripChoice
     } catch (error) {
         console.error('Error creating booking:', error);
         res.status(500).send('Error creating booking');

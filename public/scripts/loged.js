@@ -10,14 +10,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     const userLoggedIn = data.loggedIn;
 
             if (userLoggedIn) {
-                document.querySelector('.navbar_links[href="/login"]').style.display = 'none';
-                document.querySelector('.navbar_btn a[href="/signup"]').style.display = 'none';
+                 // Hide login and signup buttons
+                 const loginButton = document.querySelector('.navbar_item a[href="/login"]');
+                 const signupButton = document.querySelector('.navbar_btn a[href="/signup"]');
+                 if (loginButton) loginButton.style.display = 'none';
+                 if (signupButton) signupButton.style.display = 'none';
+
+                 // Show my profile and logout buttons
+                 const myProfileButton = document.querySelector('.navbar_item a[href="/myprofile"]');
+                 const logoutButton = document.querySelector('.navbar_btn a[href="/logout"]');
+                 if (myProfileButton) myProfileButton.style.display = 'block';
+                 if (logoutButton) logoutButton.style.display = 'block';
             } else {
-                document.querySelector('.navbar_links[href="/myprofile"]').style.display = 'none';
-                document.querySelector('.navbar_btn a[href="/logout"]').style.display = 'none';
+                // Show login and signup buttons
+                const loginButton = document.querySelector('.navbar_item a[href="/login"]');
+                const signupButton = document.querySelector('.navbar_btn a[href="/signup"]');
+                if (loginButton) loginButton.style.display = 'inline-block';
+                if (signupButton) signupButton.style.display = 'inline-block';
+
+                // Hide my profile and logout buttons
+                const myProfileButton = document.querySelector('.navbar_item a[href="/myprofile"]');
+                const logoutButton = document.querySelector('.navbar_btn a[href="/logout"]');
+                if (myProfileButton) myProfileButton.style.display = 'none';
+                if (logoutButton) logoutButton.style.display = 'none';
             }
         })
         .catch(error => console.error("Error checking login status: ", error));
+        
         })
         .catch(error => console.error('Error loading navbar:', error));
 });

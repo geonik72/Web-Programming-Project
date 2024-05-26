@@ -26,7 +26,7 @@ const login = async (req, res) => {
             return res.status(401).send('Invalid email or password');
         }
         // Save user information in the session
-        req.session.user = user;
+        req.session.user = user
         res.redirect('/');
         console.log(user)
     } catch (error) {
@@ -47,10 +47,19 @@ const logout = (req, res) => {
     });
 };
 
+const getLoginStatus = (req, res) => {
+    if (req.session.user) {
+        res.json({ loggedIn: true });
+    } else {
+        res.json({ loggedIn: false });
+    }
+};
+
 
 
 module.exports = {
     signup,
     login,
-    logout
+    logout,
+    getLoginStatus
 };

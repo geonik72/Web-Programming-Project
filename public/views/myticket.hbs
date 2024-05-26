@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar-container" id="navbar-container">
 
     </nav>  
     <div class="tickpage">
@@ -91,7 +91,11 @@
                 email: '{{email}}',
                 phone: '{{phone}}',
                 idNum: '{{idNum}}',
-                ticketId: '{{ticketId}}'
+                ticketId: '{{ticketId}}',
+                from: '{{fromCity}}',
+                to: '{{toCity}}',
+                departureDate: '{{departureDate}}',
+                returnDate: '{{returnDate}}'
             };
 
             const qrString = JSON.stringify(qrData);
@@ -106,6 +110,7 @@
 
 <script src="../scripts/includeHTML.js"></script>  
 <script src="../scripts/appl.js"></script>
+<script src="../scripts/loged.js"></script>
 
 
 </body>

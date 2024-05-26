@@ -40,10 +40,6 @@ app.use('/', siteRoutes);
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
 
-app.get('api/login-status', (req,res) => {
-    res.json({ loggedIn: !!req.session.user});
-    console.log(req.session.user);
-});
 
 
 app.use((req, res, next) => {

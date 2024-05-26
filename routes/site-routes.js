@@ -12,6 +12,8 @@ router.post('/signup', userController.signup);
 router.post('/login', userController.login);
 router.get('/logout', userController.logout);
 
+router.get('/api/login-status', userController.getLoginStatus);
+
 // Static HTML pages routes
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
@@ -50,7 +52,14 @@ router.get('/navbar', (req, res) => {
     res.render('navbar', { layout: false });
 });
 
-
+router.get('/myprofile', (req, res) => {
+    if (req.session.user) {
+        // Extract user details from session
+        const { name, surname, email } = req.session.user;
+        // Render the myprofile.hbs template with user details
+        res.render('myprofile', { name, surname, email });
+    }
+});
 
 // Route to render destination page
 router.get('/destination/:name', (req, res) => {

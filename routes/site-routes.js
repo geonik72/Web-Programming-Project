@@ -46,6 +46,7 @@ router.get('/booking-form', (req, res) => {
     }
     req.session.flightId = req.query.flight_id;
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'booking-form.html'));
+
 });
 
 router.get('/myticket', (req, res) => {

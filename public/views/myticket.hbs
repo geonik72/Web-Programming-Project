@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <nav class="navbar-container" id="navbar-container">
+    <nav class="navbar">
 
     </nav>  
     <div class="tickpage">
@@ -59,18 +59,22 @@
               
 
                 <div class="tick-dets" id="tick-departure">
-                    <p>Departure: {{fromCity}}</p>
+                    <p>Departure: <b>{{fromCity}}</b></p>
                 </div>
 
                 <div class="tick-dets" id="tick-arrival">
-                    <p>Arrival: {{toCity}}</p>
+                    <p>Arrival: <b>{{toCity}}</b></p>
                 </div>
 
-                <div class="tick-dets" id="tick-date-arr">
-                    <p>Date: {{departureDate}}</p>
+                <div class="tick-dets" id="tick-date-departure">
+                    <p>Departure Date: <b>{{departureDate}}</b></p>
                 </div>
-                
-                
+
+                {{#if isRoundTrip}}  
+                 <div class="tick-dets" id="tick-date-return">
+                    <p>Return Date: <b>{{returnDate}}</b></p>
+                </div>
+                {{/if}}
                
 
                 
@@ -102,7 +106,7 @@
 
 <script src="../scripts/includeHTML.js"></script>  
 <script src="../scripts/appl.js"></script>
-<script src="../scripts/loged.js"></script>
+
 
 </body>
 </html>

@@ -99,7 +99,7 @@ router.post('/submitBooking', (req, res) => {
     const { name, surname, email, phone, idNum } = req.body;
     const ticketId = Math.floor(Math.random() * 1000000); // Generate a random ticket ID
     const { from, to, departureDate, returnDate, tripChoice } = req.session.searchParams;
-    ticektController.renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate);
+    ticektController.renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate, tripChoice);
     //res.render('myticket', { name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate});
 });
 

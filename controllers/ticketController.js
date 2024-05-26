@@ -1,7 +1,10 @@
 const path = require('path');
 const Flight = require('../models/flight');
 
-function renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate){
+function renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate, tripChoice){
+    const isRoundTrip = tripChoice === 'round trip';
+    const isOneWay = tripChoice === 'one way';
+
     const cityMap = {
         1: "Athens, Greece",
         2: "Porto, Portugal",
@@ -38,7 +41,8 @@ function renderTickets(req, res, name, surname, email, phone, idNum, ticketId, f
         fromCity,
         toCity,
         departureDate,
-        returnDate
+        returnDate,
+        isRoundTrip
     });
 }
 

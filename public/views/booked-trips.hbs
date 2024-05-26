@@ -3,27 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My booked trips</title>
-    <link rel ="stylesheet" href ="../styles/bookedtrips.css" />
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="../styles/myticket.css" />
+    <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
 </head>
 <body>
-    <div class="bookedpage">
-        <nav class="navbar-container" id="navbar-container">
-            
-        </nav>
-    
-    
-    <div class="lower-page">
-        <div class="tickets">
-        
-        </div>
+    <nav class="navbar">
+
+    </nav>  
+    <div class="tickpage">
+        {{#if bookings.length}}
+            {{#each bookings}}
+                <div class="ticket-box">
+                    <div class="ticket-details">
+                        <div class="tick-dets" id="ticketid">
+                            <p>Ticket ID: <b>{{booking_id}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-name">
+                            <p>Name: <b>{{../name}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-surname">
+                            <p>Surname: <b>{{../surname}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-email">
+                            <p>Email: <b>{{../email}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-phone">
+                            <p>Phone Number: <b>{{../phone}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-idNum">
+                            <p>ID Number: <b>{{../idNum}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-departure">
+                            <p>Departure: <b>{{origin_city}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-arrival">
+                            <p>Arrival: <b>{{destination_city}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-date-departure">
+                            <p>Departure Date: <b>{{departure_time}}</b></p>
+                        </div>
+                        <div class="tick-dets" id="tick-price">
+                            <p>Price: <b>{{price}}</b></p>
+                        </div>
+                        <!-- Add other details as needed -->
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+            <p>No bookings found.</p>
+        {{/if}}
     </div>
 
-   
-    
-</div>
     <script src="../scripts/includeHTML.js"></script>  
     <script src="../scripts/appl.js"></script>
-    <script src="../scripts/loged.js"></script>
 </body>
 </html>

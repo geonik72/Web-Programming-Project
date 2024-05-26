@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-    <link rel ="stylesheet" href ="../styles/search_results.css" />
+    <link rel="stylesheet" href="../styles/search_results.css" />
     <script src="https://kit.fontawesome.com/b99a65b969.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,8 +12,6 @@
 
     </nav>
     <div class="page">
-
-
         <h2>Search results from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}</h2>
         <h4>Available flights from {{#if flights.length}}{{flights.[0].origin_city}}{{/if}} to {{#if flights.length}}{{flights.[0].destination_city}}{{/if}}. <br> Choose one!</h4>
         
@@ -26,32 +24,23 @@
                 <h3>{{this.departure_time}} <br> {{this.origin_city}} ({{this.origin_code}}) <span>&#10230;</span></h3>
                 <h3>{{this.arrival_time}} <br> {{this.destination_city}} ({{this.destination_code}})</h3>
             </div>
-
              <h4><i>{{this.price}}</i></h4>
+             <input type="hidden" class="flight-id" value="{{this.id}}"> <!-- Hidden input to store flight ID -->
         </div>
         {{/each}}
-            
-        
 
         {{#if isRoundTrip}}
-        <li class="return">
-            <a href="/search_results_return" class="return-button" id="returnButton">Choose&nbsp;return flight</a>
-        </li>
+            <li class="return">
+                <a href="/search_results_return" class="return-button" id="returnButton">Choose return flight</a>
+            </li>
         {{/if}}
     
         {{#if isOneWay}}
-        <li class="checkout">
-            <a href="/booking-form" class="checkout-button" id="checkoutButton">Proceed&nbsp;to checkout</a>
-        </li>
+            <li class="checkout">
+                <a href="#" class="checkout-button" id="checkoutButton">Proceed to checkout</a>
+            </li>
         {{/if}}
-      
-
-
-
     </div> 
-    
-
-
 
     <script src="../scripts/appl.js"></script>
     <script src="../scripts/includeHTML.js"></script> 
@@ -59,5 +48,22 @@
     <!-- <script src="../scripts/button-visibility.js"></script> -->
     <script src="../scripts/selection-checkout.js"></script> 
     <script src="../scripts/loged.js"></script>
+
+    <script>
+        // Add event listener to checkout button
+        const checkoutButton = document.getElementById('checkoutButton');
+        checkoutButton.addEventListener('click', function(event) {
+            const selectedFlightId = document.querySelector('.results-box.active .flight-id').value;
+            this.href = `/booking-form?flight_id=${selectedFlightId}`;
+        });
+
+        // Add event listener to results boxes to toggle active class
+        document.querySelectorAll('.results-box').forEach(box => {
+            box.addEventListener('click', function() {
+                document.querySelectorAll('.results-box').forEach(box => box.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

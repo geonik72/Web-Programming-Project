@@ -4,6 +4,8 @@ const router = express.Router();
 const flightController = require('../controllers/flightController');
 const userController = require('../controllers/userController');
 const ticektController = require('../controllers/ticketController');
+const { getDestinationByName } = require('../db/database');
+
 
 // User authentication routes
 router.post('/signup', userController.signup);
@@ -47,6 +49,29 @@ router.get('/myticket', (req, res) => {
 router.get('/navbar', (req, res) => {
     res.render('navbar', { layout: false });
 });
+
+
+
+// Route to render destination page
+router.get('/destination/:name', (req, res) => {
+    const destinationName = req.params.name;
+    try {
+        const destination = getDestinationByName(destinationName);
+        if (destination) {
+            res.render('destination', {
+                name: destination.name,
+                image: `data:image/jpeg;base64,${destination.image.toString('base64')}`,
+                details: destination.details
+            });
+        } else {
+            res.status(404).send('Destination not found');
+        }
+    } catch (error) {
+        res.status(500).send('Server error');
+    }
+});
+
+
 
 
 

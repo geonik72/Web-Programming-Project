@@ -32,6 +32,25 @@ CREATE TABLE IF NOT EXISTS users (
 	email TEXT,
 	password TEXT
 );
+
+CREATE TABLE IF NOT EXISTS top_destinations (
+	name TEXT NOT NULL,
+	image BLOB NOT NULL, 		
+	details TEXT NOT NULL
+	
+);
+
+
 `);
 
-module.exports = db;
+
+
+function getDestinationByName(name) {
+    const stmt = db.prepare('SELECT name, image, details FROM top_destinations WHERE name = ?');
+    return stmt.get(name);
+}
+
+module.exports = {
+	db,
+	getDestinationByName
+};

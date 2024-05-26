@@ -3,8 +3,9 @@ const path = require('path');
 const router = express.Router();
 const flightController = require('../controllers/flightController');
 const userController = require('../controllers/userController');
-const ticektController = require('../controllers/ticketController');
+const ticketController = require('../controllers/ticketController');
 const destinationController  = require('../controllers/destinationController');
+const db = require('../db/database');
 
 
 // User authentication routes
@@ -40,6 +41,10 @@ router.get('/error', (req, res) => {
 });
 
 router.get('/booking-form', (req, res) => {
+    if (!req.session.user) {
+        return res.redirect('/login'); // Redirect to login if user is not authenticated
+    }
+    req.session.flightId = req.query.flight_id;
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'booking-form.html'));
 });
 
@@ -107,9 +112,59 @@ router.get('/search_results_return', (req, res) => {
 router.post('/submitBooking', (req, res) => {
     const { name, surname, email, phone, idNum } = req.body;
     const ticketId = Math.floor(Math.random() * 1000000); // Generate a random ticket ID
+    req.session.ticketId = ticketId;
     const { from, to, departureDate, returnDate, tripChoice } = req.session.searchParams;
-    ticektController.renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate, tripChoice);
-    //res.render('myticket', { name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate});
+    ticketController.renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate, tripChoice);
+    ticketController.bookTrip(req, res, req.session.user.id, name, surname, email, phone, idNum, ticketId, from, to, departureDate, req.session.flightId);
+
 });
+
+router.get('/myBookings', (req, res) => {
+    if (!req.session.user) {
+        return res.redirect('/login'); // Redirect to login if user is not authenticated
+    }
+
+    const userId = req.session.user.id;
+
+    const name = req.session.user.name;
+    const surname = req.session.user.surname;
+    const email = req.session.user.email;
+    //temp solution until i get the info from the actual form
+
+
+    try {
+        const stmt = db.prepare(`
+            SELECT 
+                bookings.id AS booking_id, 
+                origin.City AS origin_city,  -- Include origin city name
+                destination.City AS destination_city,  -- Include destination city name
+                flights."departure time" AS departure_time, 
+                flights."arrival time" AS arrival_time, 
+                flights.duration, 
+                flights.price,
+                bookings.date AS date, 
+                bookings.name AS name,
+                bookings.surname AS surname,
+                bookings.email AS email,
+                bookings.phone AS phone,
+                bookings.idNum AS idNum,
+                bookings.ticketId AS ticketId
+            FROM bookings
+            JOIN flights ON bookings.flight_id = flights.id
+            JOIN airports AS origin ON flights.origin_id = origin.id  -- Join with airports table to get origin city name
+            JOIN airports AS destination ON flights.destination_id = destination.id  -- Join with airports table to get destination city name
+            WHERE bookings.user_id = ?
+        `);
+
+        const bookings = stmt.all(userId);
+    
+        res.render('booked-trips', { bookings});
+    } catch (error) {
+        console.error('Error retrieving bookings:', error);
+        res.status(500).send('Error retrieving bookings');
+    }
+});
+
+
 
 module.exports = router;

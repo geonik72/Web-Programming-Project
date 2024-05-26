@@ -11,7 +11,6 @@ db.exec(`
 		"arrival time"	NUMERIC NOT NULL,
 		"duration"	TEXT NOT NULL,
 		"price"	TEXT,
-		"date"	TEXT,
 		FOREIGN KEY("destination_id") REFERENCES "airports"("id"),
 		FOREIGN KEY("origin_id") REFERENCES "airports"("id"),
 		PRIMARY KEY("id")
@@ -39,6 +38,18 @@ CREATE TABLE IF NOT EXISTS top_destinations (
 	details TEXT NOT NULL
 	
 );
+
+CREATE TABLE IF NOT EXISTS bookings (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	user_id INTEGER,
+	flight_id INTEGER,
+	date TEXT,
+	departure TEXT,
+	arrival TEXT,
+	FOREIGN KEY(user_id) REFERENCES users(id),
+	FOREIGN KEY(flight_id) REFERENCES flights(id)
+);
+
 `);
 
 

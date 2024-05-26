@@ -1,5 +1,8 @@
 const path = require('path');
 const Flight = require('../models/flight');
+const User = require('../models/user');
+const db = require('../db/database');
+
 
 function renderTickets(req, res, name, surname, email, phone, idNum, ticketId, from, to, departureDate, returnDate, tripChoice){
     const isRoundTrip = tripChoice === 'round trip';
@@ -44,5 +47,14 @@ function renderTickets(req, res, name, surname, email, phone, idNum, ticketId, f
         isRoundTrip
     });
 }
-
-module.exports = { renderTickets };
+function bookTrip(req, res, userId, flightId, date,from, to) {
+    try {
+        const stmt = db.prepare('INSERT INTO bookings (user_id, flight_id, date, departure, arrival) VALUES (?, ?, ?, ?, ?)');
+        stmt.run(userId, flightId, date, from, to);
+       
+    } catch (error) {
+        console.error('Error creating booking:', error);
+        res.status(500).send('Error creating booking');
+    }
+}
+module.exports = { renderTickets, bookTrip};

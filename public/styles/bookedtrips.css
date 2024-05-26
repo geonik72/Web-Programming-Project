@@ -1,0 +1,25 @@
+*{
+    font-family: "Times New Roman", Times, serif;
+    box-sizing: border-box;
+}
+
+
+.bookedpage{
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(59, 82, 182), rgba(100, 201, 248, 0));
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 100%;
+}
+
+
+
+.lower-page {
+    display: flex;
+    justify-content: center; /* Center the person container horizontally */
+    margin: 50px 32px;
+}

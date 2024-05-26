@@ -82,6 +82,8 @@
 
 .navbar_item{
     height: 80px;
+    display: inline-block;
+    
 }
 
 .navbar_links{

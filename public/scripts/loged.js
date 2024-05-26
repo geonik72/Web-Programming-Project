@@ -9,28 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(data => {
                     const userLoggedIn = data.loggedIn;
 
+            const loginButton = document.querySelector('.navbar_btn a[href="/login"]');
+            const signupButton = document.querySelector('.navbar_btn a[href="/signup"]');
+            const myProfileButton = document.querySelector('.navbar_btn a[href="/myprofile"]');
+            const logoutButton = document.querySelector('.navbar_btn a[href="/logout"]');
+
             if (userLoggedIn) {
-                 // Hide login and signup buttons
-                 const loginButton = document.querySelector('.navbar_item a[href="/login"]');
-                 const signupButton = document.querySelector('.navbar_btn a[href="/signup"]');
+                 
                  if (loginButton) loginButton.style.display = 'none';
                  if (signupButton) signupButton.style.display = 'none';
 
-                 // Show my profile and logout buttons
-                 const myProfileButton = document.querySelector('.navbar_item a[href="/myprofile"]');
-                 const logoutButton = document.querySelector('.navbar_btn a[href="/logout"]');
-                 if (myProfileButton) myProfileButton.style.display = 'block';
-                 if (logoutButton) logoutButton.style.display = 'block';
-            } else {
-                // Show login and signup buttons
-                const loginButton = document.querySelector('.navbar_item a[href="/login"]');
-                const signupButton = document.querySelector('.navbar_btn a[href="/signup"]');
-                if (loginButton) loginButton.style.display = 'inline-block';
-                if (signupButton) signupButton.style.display = 'inline-block';
 
-                // Hide my profile and logout buttons
-                const myProfileButton = document.querySelector('.navbar_item a[href="/myprofile"]');
-                const logoutButton = document.querySelector('.navbar_btn a[href="/logout"]');
+                 if (myProfileButton){
+                    myProfileButton.style.display = 'inline-block';
+                    //myProfileButton.style.justifyContent = 'center';
+                 } 
+                 if (logoutButton) logoutButton.style.display = 'inline-block';
+            } else {
+                if (loginButton) {
+                    loginButton.style.display = 'inline-block';
+                    //loginButton.style.justifyContent = 'center';
+                }
+                if (signupButton) signupButton.style.display = 'inline-block';
+                
+
                 if (myProfileButton) myProfileButton.style.display = 'none';
                 if (logoutButton) logoutButton.style.display = 'none';
             }
